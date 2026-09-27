@@ -83,74 +83,101 @@ class NowcastConvLSTM(nn.Module):
             
         return torch.stack(outputs, dim=1) # (B, T_out, C, H, W)
 
-def build_dummy_dataset(dwr_dir, seq_in=3, seq_out=12, img_size=(128, 128)):
-    import cv2
-    files = glob.glob(os.path.join(dwr_dir, '*.tif'))
-    files.sort(key=os.path.getctime)
+def create_synthetic_sequence(seq_in=3, seq_out=12, img_size=(128, 128)):
+    total_frames = seq_in + seq_out
+    seq = []
     
-    if len(files) == 0:
-        return None
+    # Random initial position, velocity, and blob size
+    x0, y0 = np.random.uniform(20, 108, 2)
+    vx, vy = np.random.uniform(-4, 4, 2)
+    sigma = np.random.uniform(8, 15)
+    max_dbz = np.random.uniform(30, 60)
+    
+    xx, yy = np.meshgrid(np.arange(img_size[1]), np.arange(img_size[0]))
+    
+    for t in range(total_frames):
+        # Move blob
+        cx = x0 + vx * t
+        cy = y0 + vy * t
         
-    # Just take up to the last N files we need, or repeat the last one to simulate history
-    # For a demo training loop, we generate synthetic shifts of the real data
-    # so we have enough frames to "train" a single batch.
-    
-    with rasterio.open(files[-1]) as src:
-        base_img = src.read(1)
-        base_img = np.nan_to_num(base_img)
-        # Resize for ConvLSTM training to fit in memory easily (128x128 for demo)
-        base_img = cv2.resize(base_img, img_size)
-    
-    # Generate shifting sequence
-    X = []
-    Y = []
-    
-    # 1 batch for demo
-    x_seq = []
-    for i in range(seq_in):
-        # Shift slightly
-        shifted = np.roll(base_img, i*2, axis=1)
-        x_seq.append(shifted)
+        # Add slight intensity variation over time
+        intensity = max_dbz * (1.0 + 0.1 * np.sin(t * 0.5))
         
-    y_seq = []
-    for i in range(seq_out):
-        shifted = np.roll(base_img, (seq_in + i)*2, axis=1)
-        y_seq.append(shifted)
+        # Gaussian blob
+        blob = intensity * np.exp(-((xx - cx)**2 + (yy - cy)**2) / (2 * sigma**2))
         
-    X.append(np.stack(x_seq)[:, np.newaxis, :, :])
-    Y.append(np.stack(y_seq)[:, np.newaxis, :, :])
+        # Add noise
+        noise = np.random.normal(0, 2, img_size)
+        frame = blob + noise
+        
+        # Clip to realistic dBZ
+        frame = np.clip(frame, 0, 60)
+        seq.append(frame)
+        
+    seq = np.stack(seq)
+    # Normalize to [0, 1]
+    seq = seq / 60.0
     
+    return seq[:seq_in], seq[seq_in:]
+
+def build_synthetic_dataset(num_seqs=50, seq_in=3, seq_out=12, img_size=(128, 128)):
+    X, Y = [], []
+    for _ in range(num_seqs):
+        x_seq, y_seq = create_synthetic_sequence(seq_in, seq_out, img_size)
+        X.append(x_seq[:, np.newaxis, :, :])
+        Y.append(y_seq[:, np.newaxis, :, :])
+        
     return torch.tensor(np.array(X), dtype=torch.float32), torch.tensor(np.array(Y), dtype=torch.float32)
+
+def weighted_mse_loss(pred, target):
+    # Upweight pixels that have actual storm data in the target
+    # target is normalized [0, 1]. Let's weight pixels > 0.1 (6 dBZ) higher.
+    weight = torch.ones_like(target)
+    weight[target > 0.1] = 10.0  # 10x penalty for missing storm pixels
+    
+    loss = weight * (pred - target) ** 2
+    return loss.mean()
 
 def train_convlstm():
     print("Initializing ConvLSTM Model...")
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    dwr_dir = os.path.join(base_dir, '..', 'data', 'dwr_proxy')
     model_dir = os.path.join(base_dir, 'models')
     os.makedirs(model_dir, exist_ok=True)
     
-    # Setup
-    model = NowcastConvLSTM(in_channels=1, hidden_dim=8, out_frames=12)
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
-    criterion = nn.MSELoss()
+    model = NowcastConvLSTM(in_channels=1, hidden_dim=16, out_frames=12)
+    # Moved to GPU if available, else CPU (for this env likely CPU is fine)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = model.to(device)
     
-    dataset = build_dummy_dataset(dwr_dir)
-    if dataset is None:
-        print("No DWR proxy files found to bootstrap training.")
-        return
-        
-    X_train, y_train = dataset
-    print(f"Demo Training Data Shape: X={X_train.shape}, Y={y_train.shape}")
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
     
-    print("Running training loop (5 epochs for demo)...")
+    print("Building synthetic dataset (50 sequences of moving blobs)...")
+    X_train, y_train = build_synthetic_dataset(num_seqs=50)
+    
+    # Use DataLoader for batching
+    dataset = torch.utils.data.TensorDataset(X_train, y_train)
+    dataloader = torch.utils.data.DataLoader(dataset, batch_size=4, shuffle=True)
+    
+    print(f"Training Data Shape: X={X_train.shape}, Y={y_train.shape}")
+    
+    print("Running training loop (10 epochs)...")
     model.train()
-    for epoch in range(5):
-        optimizer.zero_grad()
-        output = model(X_train)
-        loss = criterion(output, y_train)
-        loss.backward()
-        optimizer.step()
-        print(f"Epoch {epoch+1}/5 - Loss: {loss.item():.4f}")
+    
+    for epoch in range(10):
+        epoch_loss = 0.0
+        for batch_X, batch_y in dataloader:
+            batch_X, batch_y = batch_X.to(device), batch_y.to(device)
+            
+            optimizer.zero_grad()
+            output = model(batch_X)
+            
+            loss = weighted_mse_loss(output, batch_y)
+            loss.backward()
+            optimizer.step()
+            
+            epoch_loss += loss.item()
+            
+        print(f"Epoch {epoch+1}/10 - Avg Loss: {epoch_loss / len(dataloader):.4f}")
         
     out_path = os.path.join(model_dir, 'convlstm.pt')
     torch.save(model.state_dict(), out_path)
@@ -160,16 +187,16 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
     # Load model
     base_dir = os.path.dirname(os.path.abspath(__file__))
     dwr_dir = os.path.join(base_dir, '..', 'data', 'dwr_proxy')
-    out_dir = os.path.join(base_dir, '..', 'data', 'nowcast_comparison')
     model_path = os.path.join(base_dir, 'models', 'convlstm.pt')
-    os.makedirs(out_dir, exist_ok=True)
     
     if not os.path.exists(model_path):
         print("ConvLSTM weights not found. Train first.")
         return None
         
-    model = NowcastConvLSTM(in_channels=1, hidden_dim=8, out_frames=num_forecast_frames)
-    model.load_state_dict(torch.load(model_path))
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = NowcastConvLSTM(in_channels=1, hidden_dim=16, out_frames=num_forecast_frames)
+    model.load_state_dict(torch.load(model_path, map_location=device))
+    model = model.to(device)
     model.eval()
     
     import cv2
@@ -178,22 +205,38 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
     if len(files) == 0:
         return None
         
-    with rasterio.open(files[-1]) as src:
-        base_img = src.read(1)
-        base_img = np.nan_to_num(base_img)
-        input_img = cv2.resize(base_img, target_size)
+    # Read the latest 3 files to give a sequence, not just repeating 1
+    recent_files = files[-3:]
+    # If we have less than 3, just pad with the first one
+    while len(recent_files) < 3:
+        recent_files.insert(0, recent_files[0])
         
-    # Create a sequence of 3 identical inputs just for inference demo
-    x_seq = [input_img, input_img, input_img]
+    x_seq = []
+    for f in recent_files:
+        with rasterio.open(f) as src:
+            img = src.read(1)
+            img = np.nan_to_num(img)
+            img = cv2.resize(img, target_size)
+            # Normalize input
+            img = np.clip(img, 0, 60) / 60.0
+            x_seq.append(img)
+            
     x_tensor = torch.tensor(np.array(x_seq), dtype=torch.float32).unsqueeze(0).unsqueeze(2) # (1, 3, 1, H, W)
+    x_tensor = x_tensor.to(device)
     
     print("Running ConvLSTM inference...")
     with torch.no_grad():
         preds = model(x_tensor)
         
-    preds = preds.squeeze(0).squeeze(1).numpy() # (12, H, W)
+    preds = preds.squeeze(0).squeeze(1).cpu().numpy() # (12, H, W)
     
+    # Denormalize
+    preds = preds * 60.0
+    
+    # Output stats
     print(f"ConvLSTM inference produced {len(preds)} frames.")
+    print(f"Raw Output Tensor Stats (after denorm) - Min: {np.min(preds):.4f}, Max: {np.max(preds):.4f}, Mean: {np.mean(preds):.4f}")
+    
     return preds
 
 if __name__ == "__main__":

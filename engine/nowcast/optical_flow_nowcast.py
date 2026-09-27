@@ -94,6 +94,8 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
             crs=crs, transform=transform
         ) as dst:
             dst.write(extrapolated.astype(np.float32), 1)
+            # Embed the source DWR observation filename/timestamp as metadata
+            dst.update_tags(base_time=os.path.basename(frames[-1]))
             
         forecast_files.append(out_path)
         

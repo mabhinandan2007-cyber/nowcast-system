@@ -261,6 +261,8 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
             crs=crs, transform=transform
         ) as dst:
             dst.write(preds[i].astype(np.float32), 1)
+            # Embed the source DWR observation filename/timestamp as metadata
+            dst.update_tags(base_time=os.path.basename(recent_files[-1]))
             
         forecast_files.append(out_path)
     

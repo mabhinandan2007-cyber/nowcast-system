@@ -1,0 +1,6 @@
+engine/data/
+engine/detection/models/
+engine/nowcast/models/
+*.pyc
+__pycache__/
+.venv/

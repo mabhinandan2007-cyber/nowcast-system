@@ -1,0 +1,8005 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.27,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -89.0230712890625,
+        "texture_variance": 70.21875,
+        "timestamp": "2026-09-27T16:27:29.631896"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.49,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.491455078125,
+        "texture_variance": 69.609375,
+        "timestamp": "2026-09-27T16:27:29.632537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.21,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -20.102783203125,
+        "texture_variance": 38.484375,
+        "timestamp": "2026-09-27T16:27:29.632537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.63,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -42.9075927734375,
+        "texture_variance": 50.015625,
+        "timestamp": "2026-09-27T16:27:29.632537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.93,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -100.907958984375,
+        "texture_variance": 180.7734375,
+        "timestamp": "2026-09-27T16:27:29.632537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.29,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -47.3583984375,
+        "texture_variance": 69.0703125,
+        "timestamp": "2026-09-27T16:27:29.633050"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.41,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -90.3953857421875,
+        "texture_variance": 101.1640625,
+        "timestamp": "2026-09-27T16:27:29.633050"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.83,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -35.1871337890625,
+        "texture_variance": 40.78125,
+        "timestamp": "2026-09-27T16:27:29.633050"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.03,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.402587890625,
+        "texture_variance": 64.0703125,
+        "timestamp": "2026-09-27T16:27:29.633050"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.33,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -130.0723876953125,
+        "texture_variance": 85.7578125,
+        "timestamp": "2026-09-27T16:27:29.633605"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.77,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -78.4931640625,
+        "texture_variance": 216.484375,
+        "timestamp": "2026-09-27T16:27:29.633605"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.37,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -119.678466796875,
+        "texture_variance": 115.5703125,
+        "timestamp": "2026-09-27T16:27:29.633605"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.43,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -115.5677490234375,
+        "texture_variance": 98.8046875,
+        "timestamp": "2026-09-27T16:27:29.633605"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.61,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -106.7291259765625,
+        "texture_variance": 103.609375,
+        "timestamp": "2026-09-27T16:27:29.633605"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.73,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -82.25341796875,
+        "texture_variance": 132.265625,
+        "timestamp": "2026-09-27T16:27:29.634150"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.85,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -80.42724609375,
+        "texture_variance": 163.2890625,
+        "timestamp": "2026-09-27T16:27:29.634150"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.91,
+          37.97
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.9859619140625,
+        "texture_variance": 76.625,
+        "timestamp": "2026-09-27T16:27:29.634150"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.13,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.33642578125,
+        "texture_variance": 77.859375,
+        "timestamp": "2026-09-27T16:27:29.634150"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.19,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -19.61114501953125,
+        "texture_variance": 183.94140625,
+        "timestamp": "2026-09-27T16:27:29.634150"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.31,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -48.96453857421875,
+        "texture_variance": 170.734375,
+        "timestamp": "2026-09-27T16:27:29.634705"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.37,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -30.1605224609375,
+        "texture_variance": 42.66796875,
+        "timestamp": "2026-09-27T16:27:29.634885"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.67,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -97.33209228515625,
+        "texture_variance": 51.125,
+        "timestamp": "2026-09-27T16:27:29.635395"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.73,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -81.6898193359375,
+        "texture_variance": 110.5234375,
+        "timestamp": "2026-09-27T16:27:29.635395"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.78999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -19.89208984375,
+        "texture_variance": 133.5,
+        "timestamp": "2026-09-27T16:27:29.635395"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.03,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -33.00738525390625,
+        "texture_variance": 94.21484375,
+        "timestamp": "2026-09-27T16:27:29.635932"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.09,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.573974609375,
+        "texture_variance": 5.17578125,
+        "timestamp": "2026-09-27T16:27:29.635932"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.15,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.3812255859375,
+        "texture_variance": 26.80078125,
+        "timestamp": "2026-09-27T16:27:29.635932"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.21,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.77069091796875,
+        "texture_variance": 29.109375,
+        "timestamp": "2026-09-27T16:27:29.635932"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.27,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.38446044921875,
+        "texture_variance": 62.078125,
+        "timestamp": "2026-09-27T16:27:29.635932"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.50999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -32.5919189453125,
+        "texture_variance": 71.5,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.57,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -63.08819580078125,
+        "texture_variance": 87.71484375,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.69,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -88.66900634765625,
+        "texture_variance": 189.0703125,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -119.6759033203125,
+        "texture_variance": 215.171875,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.15,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.00531005859375,
+        "texture_variance": 154.26953125,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.21000000000001,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.538330078125,
+        "texture_variance": 133.93359375,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.27,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -95.35516357421875,
+        "texture_variance": 23.7578125,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.33,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -64.5965576171875,
+        "texture_variance": 23.86328125,
+        "timestamp": "2026-09-27T16:27:29.636464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.39,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.6448974609375,
+        "texture_variance": 51.0,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.50999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -78.00225830078125,
+        "texture_variance": 77.4140625,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.69,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.9217529296875,
+        "texture_variance": 163.37890625,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.78997802734375,
+        "texture_variance": 228.37890625,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.05,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -80.42694091796875,
+        "texture_variance": 24.37890625,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.11,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.16387939453125,
+        "texture_variance": 40.76171875,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.35,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.12188720703125,
+        "texture_variance": 47.2265625,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.53,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.53369140625,
+        "texture_variance": 74.72265625,
+        "timestamp": "2026-09-27T16:27:29.637000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.65,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -12.32403564453125,
+        "texture_variance": 68.36328125,
+        "timestamp": "2026-09-27T16:27:29.637534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.89,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -64.30712890625,
+        "texture_variance": 49.92578125,
+        "timestamp": "2026-09-27T16:27:29.637534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.95,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -110.946044921875,
+        "texture_variance": 76.1015625,
+        "timestamp": "2026-09-27T16:27:29.637534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.07,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -63.04595947265625,
+        "texture_variance": 100.7109375,
+        "timestamp": "2026-09-27T16:27:29.637534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.65,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -86.43670654296875,
+        "texture_variance": 46.7890625,
+        "timestamp": "2026-09-27T16:27:29.637534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.83,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.13037109375,
+        "texture_variance": 81.54296875,
+        "timestamp": "2026-09-27T16:27:29.637534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.89,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -89.419189453125,
+        "texture_variance": 63.1875,
+        "timestamp": "2026-09-27T16:27:29.637534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.95,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -64.9417724609375,
+        "texture_variance": 91.375,
+        "timestamp": "2026-09-27T16:27:29.638057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.07,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -87.50836181640625,
+        "texture_variance": 78.3515625,
+        "timestamp": "2026-09-27T16:27:29.638057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.19,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.22222900390625,
+        "texture_variance": 29.68359375,
+        "timestamp": "2026-09-27T16:27:29.638057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.25,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.30352783203125,
+        "texture_variance": 23.51171875,
+        "timestamp": "2026-09-27T16:27:29.638057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.31,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.998046875,
+        "texture_variance": 59.359375,
+        "timestamp": "2026-09-27T16:27:29.638057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.37,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.616943359375,
+        "texture_variance": 84.3515625,
+        "timestamp": "2026-09-27T16:27:29.638057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.49,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -18.31390380859375,
+        "texture_variance": 43.51953125,
+        "timestamp": "2026-09-27T16:27:29.638057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.55,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -53.06781005859375,
+        "texture_variance": 25.8203125,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.61,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -80.462158203125,
+        "texture_variance": 74.3828125,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.73,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -104.5628662109375,
+        "texture_variance": 65.6796875,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.91,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -35.84588623046875,
+        "texture_variance": 155.83984375,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.03,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -180.51715087890625,
+        "texture_variance": 82.23046875,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.09,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -107.68890380859375,
+        "texture_variance": 164.08984375,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.67,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -90.77423095703125,
+        "texture_variance": 145.65234375,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.85,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -84.66290283203125,
+        "texture_variance": 153.06640625,
+        "timestamp": "2026-09-27T16:27:29.638586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.91,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.5206298828125,
+        "texture_variance": 197.66015625,
+        "timestamp": "2026-09-27T16:27:29.639109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.09,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.90960693359375,
+        "texture_variance": 99.9453125,
+        "timestamp": "2026-09-27T16:27:29.639109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.21000000000001,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -8.27484130859375,
+        "texture_variance": 34.19140625,
+        "timestamp": "2026-09-27T16:27:29.639109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.33,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -9.2490234375,
+        "texture_variance": 20.14453125,
+        "timestamp": "2026-09-27T16:27:29.639109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.45,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -47.134765625,
+        "texture_variance": 35.33203125,
+        "timestamp": "2026-09-27T16:27:29.639109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.50999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.85601806640625,
+        "texture_variance": 57.71875,
+        "timestamp": "2026-09-27T16:27:29.639109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.69,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.3734130859375,
+        "texture_variance": 187.4609375,
+        "timestamp": "2026-09-27T16:27:29.639109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -71.0439453125,
+        "texture_variance": 62.12109375,
+        "timestamp": "2026-09-27T16:27:29.639635"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.81,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -14.356201171875,
+        "texture_variance": 66.09765625,
+        "timestamp": "2026-09-27T16:27:29.639635"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -44.88482666015625,
+        "texture_variance": 58.07421875,
+        "timestamp": "2026-09-27T16:27:29.640167"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.05,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -82.5135498046875,
+        "texture_variance": 13.40234375,
+        "timestamp": "2026-09-27T16:27:29.640278"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.28999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -23.23193359375,
+        "texture_variance": 70.14453125,
+        "timestamp": "2026-09-27T16:27:29.640409"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.35,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -13.276123046875,
+        "texture_variance": 33.16015625,
+        "timestamp": "2026-09-27T16:27:29.640409"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.47,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.58563232421875,
+        "texture_variance": 77.8671875,
+        "timestamp": "2026-09-27T16:27:29.640409"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.99,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -69.71795654296875,
+        "texture_variance": 126.8984375,
+        "timestamp": "2026-09-27T16:27:29.640953"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.23,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -38.4580078125,
+        "texture_variance": 93.21484375,
+        "timestamp": "2026-09-27T16:27:29.641003"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.28999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -78.802734375,
+        "texture_variance": 82.05078125,
+        "timestamp": "2026-09-27T16:27:29.641003"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.35,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -41.47125244140625,
+        "texture_variance": 87.19921875,
+        "timestamp": "2026-09-27T16:27:29.641003"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.41,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.5775146484375,
+        "texture_variance": 66.65625,
+        "timestamp": "2026-09-27T16:27:29.641003"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.47,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.45098876953125,
+        "texture_variance": 153.4609375,
+        "timestamp": "2026-09-27T16:27:29.641564"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.53,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -41.644775390625,
+        "texture_variance": 75.37109375,
+        "timestamp": "2026-09-27T16:27:29.641564"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.65,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -63.30731201171875,
+        "texture_variance": 189.66796875,
+        "timestamp": "2026-09-27T16:27:29.641564"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.89,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -39.7213134765625,
+        "texture_variance": 82.21875,
+        "timestamp": "2026-09-27T16:27:29.642072"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.95,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.60455322265625,
+        "texture_variance": 83.828125,
+        "timestamp": "2026-09-27T16:27:29.642072"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.00999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.82000732421875,
+        "texture_variance": 90.51953125,
+        "timestamp": "2026-09-27T16:27:29.642072"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.07,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -66.74298095703125,
+        "texture_variance": 141.51171875,
+        "timestamp": "2026-09-27T16:27:29.642072"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.13,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -33.970703125,
+        "texture_variance": 108.98046875,
+        "timestamp": "2026-09-27T16:27:29.642609"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.31,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.07415771484375,
+        "texture_variance": 165.30859375,
+        "timestamp": "2026-09-27T16:27:29.642609"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.49,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -104.6058349609375,
+        "texture_variance": 186.1015625,
+        "timestamp": "2026-09-27T16:27:29.642609"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.61,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -38.64263916015625,
+        "texture_variance": 82.0625,
+        "timestamp": "2026-09-27T16:27:29.642609"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.89,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -39.391357421875,
+        "texture_variance": 129.0703125,
+        "timestamp": "2026-09-27T16:27:29.642609"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.95,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -68.8992919921875,
+        "texture_variance": 139.1953125,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.00999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -26.951171875,
+        "texture_variance": 72.13671875,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.07,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.491455078125,
+        "texture_variance": 99.26171875,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.31,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -56.22576904296875,
+        "texture_variance": 73.8046875,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.37,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -18.45587158203125,
+        "texture_variance": 52.07421875,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.85,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -69.77374267578125,
+        "texture_variance": 72.234375,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.03,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.64501953125,
+        "texture_variance": 24.25,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.21000000000001,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.90155029296875,
+        "texture_variance": 104.9453125,
+        "timestamp": "2026-09-27T16:27:29.643137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.27,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -18.386962890625,
+        "texture_variance": 101.40625,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.57,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.61669921875,
+        "texture_variance": 100.390625,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.63,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -110.1337890625,
+        "texture_variance": 78.08984375,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.69,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -101.8697509765625,
+        "texture_variance": 21.3671875,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.14385986328125,
+        "texture_variance": 45.38671875,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.77655029296875,
+        "texture_variance": 44.515625,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.93,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.90631103515625,
+        "texture_variance": 132.33984375,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.91,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -27.2874755859375,
+        "texture_variance": 55.640625,
+        "timestamp": "2026-09-27T16:27:29.643664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.09,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -57.037841796875,
+        "texture_variance": 53.484375,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.63,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -84.0777587890625,
+        "texture_variance": 43.8359375,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -25.04644775390625,
+        "texture_variance": 41.30078125,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.81,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -84.50689697265625,
+        "texture_variance": 37.4453125,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -53.2142333984375,
+        "texture_variance": 16.5078125,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.93,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.43170166015625,
+        "texture_variance": 29.9140625,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.99,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -69.7059326171875,
+        "texture_variance": 79.78125,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.05,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.02423095703125,
+        "texture_variance": 105.3203125,
+        "timestamp": "2026-09-27T16:27:29.644202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.11,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.5218505859375,
+        "texture_variance": 74.9765625,
+        "timestamp": "2026-09-27T16:27:29.644735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.23,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -67.58831787109375,
+        "texture_variance": 37.2578125,
+        "timestamp": "2026-09-27T16:27:29.644735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.35,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -69.6663818359375,
+        "texture_variance": 59.625,
+        "timestamp": "2026-09-27T16:27:29.644735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.53,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -12.44073486328125,
+        "texture_variance": 2.48046875,
+        "timestamp": "2026-09-27T16:27:29.644735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.59,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -82.041015625,
+        "texture_variance": 41.828125,
+        "timestamp": "2026-09-27T16:27:29.644735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.65,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -72.06158447265625,
+        "texture_variance": 90.21875,
+        "timestamp": "2026-09-27T16:27:29.644735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.83,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -43.58087158203125,
+        "texture_variance": 130.83203125,
+        "timestamp": "2026-09-27T16:27:29.644735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.57,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -30.54443359375,
+        "texture_variance": 46.05859375,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.63,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -40.19781494140625,
+        "texture_variance": 11.484375,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.81,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -160.2164306640625,
+        "texture_variance": 168.5546875,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -21.82366943359375,
+        "texture_variance": 194.03125,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.93,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.79779052734375,
+        "texture_variance": 159.6484375,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.99,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -32.2779541015625,
+        "texture_variance": 80.71484375,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.17,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -23.90875244140625,
+        "texture_variance": 28.609375,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.23,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -111.2401123046875,
+        "texture_variance": 52.93359375,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.28999999999999,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.5240478515625,
+        "texture_variance": 56.55078125,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.35,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -108.5111083984375,
+        "texture_variance": 46.9921875,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.53,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -41.84423828125,
+        "texture_variance": 133.5078125,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.83,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -80.6156005859375,
+        "texture_variance": 227.265625,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.49,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -80.91680908203125,
+        "texture_variance": 234.89453125,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.67,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -20.4058837890625,
+        "texture_variance": 71.55078125,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.73,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -33.7177734375,
+        "texture_variance": 56.3671875,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.85,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -63.47705078125,
+        "texture_variance": 87.40625,
+        "timestamp": "2026-09-27T16:27:29.645261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.01,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.801513671875,
+        "texture_variance": 183.31640625,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.07,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -25.9862060546875,
+        "texture_variance": 72.78125,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.13,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.54425048828125,
+        "texture_variance": 48.78515625,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.19,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -53.7447509765625,
+        "texture_variance": 66.140625,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.25,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.69171142578125,
+        "texture_variance": 68.79296875,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.43,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -112.5753173828125,
+        "texture_variance": 161.62109375,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.61,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.3321533203125,
+        "texture_variance": 32.13671875,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.67,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.08087158203125,
+        "texture_variance": 11.06640625,
+        "timestamp": "2026-09-27T16:27:29.646266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.73,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -48.9483642578125,
+        "texture_variance": 16.046875,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.85,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.30206298828125,
+        "texture_variance": 25.7734375,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.91,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.14752197265625,
+        "texture_variance": 57.6640625,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.09,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -71.91766357421875,
+        "texture_variance": 109.25390625,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.15,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -69.747802734375,
+        "texture_variance": 184.58203125,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.33,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -47.86224365234375,
+        "texture_variance": 87.8046875,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.39,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -39.9686279296875,
+        "texture_variance": 122.0234375,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.51,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -60.32537841796875,
+        "texture_variance": 56.203125,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.91,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.5040283203125,
+        "texture_variance": 145.75,
+        "timestamp": "2026-09-27T16:27:29.647269"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.15,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.86956787109375,
+        "texture_variance": 22.984375,
+        "timestamp": "2026-09-27T16:27:29.648272"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.27,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -69.10369873046875,
+        "texture_variance": 27.37109375,
+        "timestamp": "2026-09-27T16:27:29.648272"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.51,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -23.42169189453125,
+        "texture_variance": 63.07421875,
+        "timestamp": "2026-09-27T16:27:29.648272"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.69,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -68.60498046875,
+        "texture_variance": 45.24609375,
+        "timestamp": "2026-09-27T16:27:29.648272"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -72.19537353515625,
+        "texture_variance": 31.61328125,
+        "timestamp": "2026-09-27T16:27:29.648272"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.81,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -30.25665283203125,
+        "texture_variance": 36.16015625,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -8.5423583984375,
+        "texture_variance": 22.5234375,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.93,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -44.78485107421875,
+        "texture_variance": 47.2109375,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.99,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -48.47406005859375,
+        "texture_variance": 61.5234375,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.11,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.6973876953125,
+        "texture_variance": 35.34375,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.41,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.6937255859375,
+        "texture_variance": 118.89453125,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.47,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -202.84246826171875,
+        "texture_variance": 134.18359375,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.59,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -12.48748779296875,
+        "texture_variance": 132.6875,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.71,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.718017578125,
+        "texture_variance": 62.390625,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.77,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -57.54156494140625,
+        "texture_variance": 53.70703125,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.81,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -23.71173095703125,
+        "texture_variance": 22.0,
+        "timestamp": "2026-09-27T16:27:29.649270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.0810546875,
+        "texture_variance": 19.34375,
+        "timestamp": "2026-09-27T16:27:29.650270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.11,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -83.40643310546875,
+        "texture_variance": 24.54296875,
+        "timestamp": "2026-09-27T16:27:29.650351"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.41,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -101.880615234375,
+        "texture_variance": 144.453125,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.53,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -57.04156494140625,
+        "texture_variance": 114.13671875,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.59,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.06317138671875,
+        "texture_variance": 110.921875,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.65,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -104.90802001953125,
+        "texture_variance": 104.390625,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.83,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -58.81610107421875,
+        "texture_variance": 43.98046875,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.01,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -92.59405517578125,
+        "texture_variance": 155.69140625,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.25,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.2342529296875,
+        "texture_variance": 95.15625,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.31,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.09185791015625,
+        "texture_variance": 47.1875,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.37,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -43.728759765625,
+        "texture_variance": 70.8125,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.49,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -14.05718994140625,
+        "texture_variance": 103.09375,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.61,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.1187744140625,
+        "texture_variance": 76.87109375,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.73,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -106.0634765625,
+        "texture_variance": 103.6484375,
+        "timestamp": "2026-09-27T16:27:29.650533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.85,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -76.37994384765625,
+        "texture_variance": 87.30078125,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.95,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -21.86956787109375,
+        "texture_variance": 101.52734375,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.07,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -25.6763916015625,
+        "texture_variance": 99.4140625,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.25,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.44268798828125,
+        "texture_variance": 31.1796875,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.37,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -107.59912109375,
+        "texture_variance": 59.71875,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.55,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -76.0311279296875,
+        "texture_variance": 194.890625,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.61,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -51.7239990234375,
+        "texture_variance": 66.43359375,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.73,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -43.34417724609375,
+        "texture_variance": 118.5625,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.79,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -119.8433837890625,
+        "texture_variance": 84.87109375,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.85,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -114.216064453125,
+        "texture_variance": 75.2421875,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.91,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.29901123046875,
+        "texture_variance": 57.5859375,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.03,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -71.104736328125,
+        "texture_variance": 120.41796875,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.15,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -12.316650390625,
+        "texture_variance": 103.0078125,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.45,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -70.68505859375,
+        "texture_variance": 42.33984375,
+        "timestamp": "2026-09-27T16:27:29.651537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.51,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -45.20904541015625,
+        "texture_variance": 19.359375,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.57,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -20.118408203125,
+        "texture_variance": 99.67578125,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -83.96124267578125,
+        "texture_variance": 24.9453125,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.91,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.1966552734375,
+        "texture_variance": 89.34765625,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.03,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -66.80816650390625,
+        "texture_variance": 118.2109375,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.21,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -96.1226806640625,
+        "texture_variance": 90.9921875,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.45,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -56.10760498046875,
+        "texture_variance": 31.9921875,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.69,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -49.0377197265625,
+        "texture_variance": 37.328125,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.75,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -9.9075927734375,
+        "texture_variance": 30.0703125,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.81,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -41.43731689453125,
+        "texture_variance": 70.97265625,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -67.6158447265625,
+        "texture_variance": 119.60546875,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.99,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -49.09539794921875,
+        "texture_variance": 69.38671875,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.17,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -128.28729248046875,
+        "texture_variance": 54.2421875,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.23,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -57.06097412109375,
+        "texture_variance": 247.3828125,
+        "timestamp": "2026-09-27T16:27:29.652536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.41,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.76275634765625,
+        "texture_variance": 136.3203125,
+        "timestamp": "2026-09-27T16:27:29.653534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.53,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -130.39874267578125,
+        "texture_variance": 89.46484375,
+        "timestamp": "2026-09-27T16:27:29.653534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.59,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -94.23358154296875,
+        "texture_variance": 100.5625,
+        "timestamp": "2026-09-27T16:27:29.653534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.65,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -53.76495361328125,
+        "texture_variance": 116.38671875,
+        "timestamp": "2026-09-27T16:27:29.653534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.77,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -27.84649658203125,
+        "texture_variance": 93.66015625,
+        "timestamp": "2026-09-27T16:27:29.653534"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.41,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -18.96051025390625,
+        "texture_variance": 115.046875,
+        "timestamp": "2026-09-27T16:27:29.654533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.47,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -25.0318603515625,
+        "texture_variance": 57.2421875,
+        "timestamp": "2026-09-27T16:27:29.654533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.59,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.62432861328125,
+        "texture_variance": 57.6640625,
+        "timestamp": "2026-09-27T16:27:29.654533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.95,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.37030029296875,
+        "texture_variance": 48.3828125,
+        "timestamp": "2026-09-27T16:27:29.654533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.13,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -50.02947998046875,
+        "texture_variance": 61.6171875,
+        "timestamp": "2026-09-27T16:27:29.654533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.19,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -60.522705078125,
+        "texture_variance": 35.8203125,
+        "timestamp": "2026-09-27T16:27:29.654533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.31,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.02264404296875,
+        "texture_variance": 138.8828125,
+        "timestamp": "2026-09-27T16:27:29.655537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.37,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -43.34375,
+        "texture_variance": 133.2265625,
+        "timestamp": "2026-09-27T16:27:29.655537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.43,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -42.58465576171875,
+        "texture_variance": 52.50390625,
+        "timestamp": "2026-09-27T16:27:29.655537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.49,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -77.05517578125,
+        "texture_variance": 44.359375,
+        "timestamp": "2026-09-27T16:27:29.655537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.55,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.6573486328125,
+        "texture_variance": 90.08203125,
+        "timestamp": "2026-09-27T16:27:29.655537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.61,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -66.06072998046875,
+        "texture_variance": 108.46484375,
+        "timestamp": "2026-09-27T16:27:29.655537"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.67,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -27.72650146484375,
+        "texture_variance": 89.19140625,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.73,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -49.2138671875,
+        "texture_variance": 50.22265625,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.79,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.55987548828125,
+        "texture_variance": 37.59375,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.85,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -20.0794677734375,
+        "texture_variance": 70.98828125,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.43,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -93.513916015625,
+        "texture_variance": 113.87109375,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.49,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -38.16485595703125,
+        "texture_variance": 100.07421875,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.73,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -19.53076171875,
+        "texture_variance": 187.4375,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.85,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.487548828125,
+        "texture_variance": 174.61328125,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.91,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -42.3988037109375,
+        "texture_variance": 92.33203125,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.03,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -49.5439453125,
+        "texture_variance": 18.55859375,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.15,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -32.70196533203125,
+        "texture_variance": 78.27734375,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.51,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -38.41845703125,
+        "texture_variance": 92.39453125,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.57,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -38.39697265625,
+        "texture_variance": 65.63671875,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.69,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -42.246337890625,
+        "texture_variance": 87.36328125,
+        "timestamp": "2026-09-27T16:27:29.656807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.87,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -43.9150390625,
+        "texture_variance": 79.7578125,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.93,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.3402099609375,
+        "texture_variance": 69.34375,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.05,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.361083984375,
+        "texture_variance": 24.30859375,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.17,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.33416748046875,
+        "texture_variance": 38.41015625,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -45.20318603515625,
+        "texture_variance": 15.4765625,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.35,
+          8.030000000000001
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.2642822265625,
+        "texture_variance": 103.62109375,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.27,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -78.0501708984375,
+        "texture_variance": 91.92578125,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.39,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -32.385986328125,
+        "texture_variance": 102.875,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.63,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.669921875,
+        "texture_variance": 96.05078125,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.69,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -77.91619873046875,
+        "texture_variance": 132.4375,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.75,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -28.10406494140625,
+        "texture_variance": 140.61328125,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.81,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.781005859375,
+        "texture_variance": 124.1171875,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.87,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -57.9178466796875,
+        "texture_variance": 80.53125,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.11,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -56.9454345703125,
+        "texture_variance": 60.7421875,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.28999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -48.24981689453125,
+        "texture_variance": 18.64453125,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.35,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -37.77642822265625,
+        "texture_variance": 26.453125,
+        "timestamp": "2026-09-27T16:27:29.657828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.41,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -58.89178466796875,
+        "texture_variance": 26.19921875,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.59,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -32.2822265625,
+        "texture_variance": 29.90625,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.65,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.3885498046875,
+        "texture_variance": 51.6484375,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.00999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -60.4071044921875,
+        "texture_variance": 49.8828125,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.07,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -20.65374755859375,
+        "texture_variance": 86.375,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.25,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.450439453125,
+        "texture_variance": 58.734375,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.47,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -5.40008544921875,
+        "texture_variance": 87.375,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.53,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.53277587890625,
+        "texture_variance": 87.9296875,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.65,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -59.8316650390625,
+        "texture_variance": 93.84765625,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.77,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -77.20904541015625,
+        "texture_variance": 134.63671875,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.83,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -11.280517578125,
+        "texture_variance": 85.12109375,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.95,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -49.654296875,
+        "texture_variance": 95.65234375,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.07,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.49468994140625,
+        "texture_variance": 83.38671875,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.34405517578125,
+        "texture_variance": 164.125,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.25,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -61.50384521484375,
+        "texture_variance": 188.9453125,
+        "timestamp": "2026-09-27T16:27:29.658937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.49,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.29034423828125,
+        "texture_variance": 196.01171875,
+        "timestamp": "2026-09-27T16:27:29.659967"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.55,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -77.94854736328125,
+        "texture_variance": 154.85546875,
+        "timestamp": "2026-09-27T16:27:29.659967"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.67,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -59.8446044921875,
+        "texture_variance": 65.375,
+        "timestamp": "2026-09-27T16:27:29.659967"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.78999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.4737548828125,
+        "texture_variance": 100.4609375,
+        "timestamp": "2026-09-27T16:27:29.660252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.03,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -39.629638671875,
+        "texture_variance": 64.96875,
+        "timestamp": "2026-09-27T16:27:29.660252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.15,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -50.87060546875,
+        "texture_variance": 41.03125,
+        "timestamp": "2026-09-27T16:27:29.660252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.21,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -68.8812255859375,
+        "texture_variance": 50.359375,
+        "timestamp": "2026-09-27T16:27:29.660252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.55,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -96.9617919921875,
+        "texture_variance": 17.3671875,
+        "timestamp": "2026-09-27T16:27:29.660252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.61,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.8948974609375,
+        "texture_variance": 93.87109375,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.91,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.29754638671875,
+        "texture_variance": 90.640625,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.97,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -12.934326171875,
+        "texture_variance": 90.06640625,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.03,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -37.73126220703125,
+        "texture_variance": 127.05078125,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.09,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -82.1827392578125,
+        "texture_variance": 184.89453125,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.27,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.644287109375,
+        "texture_variance": 97.578125,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.33,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.113037109375,
+        "texture_variance": 37.734375,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.39,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -83.4945068359375,
+        "texture_variance": 69.0,
+        "timestamp": "2026-09-27T16:27:29.661291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.45,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -64.07403564453125,
+        "texture_variance": 45.2109375,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.50999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.67156982421875,
+        "texture_variance": 75.015625,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.63,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -83.106689453125,
+        "texture_variance": 203.7890625,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          92.87,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.7030029296875,
+        "texture_variance": 34.33984375,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.23,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -25.477783203125,
+        "texture_variance": 94.8359375,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.28999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -113.48406982421875,
+        "texture_variance": 126.265625,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.41,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -99.5189208984375,
+        "texture_variance": 91.15625,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.63,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -28.00146484375,
+        "texture_variance": 120.51953125,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.69,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.43414306640625,
+        "texture_variance": 114.39453125,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.75,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.36529541015625,
+        "texture_variance": 56.484375,
+        "timestamp": "2026-09-27T16:27:29.662397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.87,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -28.3349609375,
+        "texture_variance": 68.4140625,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.93,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -116.75384521484375,
+        "texture_variance": 56.8203125,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.41,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -31.81341552734375,
+        "texture_variance": 144.45703125,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.65,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -65.27203369140625,
+        "texture_variance": 63.55078125,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.77,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -12.126220703125,
+        "texture_variance": 63.9765625,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.83,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -37.2437744140625,
+        "texture_variance": 56.41015625,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.89,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -5.74603271484375,
+        "texture_variance": 98.84375,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.95,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -14.234619140625,
+        "texture_variance": 95.17578125,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.00999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -38.12811279296875,
+        "texture_variance": 87.16015625,
+        "timestamp": "2026-09-27T16:27:29.663485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.2158203125,
+        "texture_variance": 45.9375,
+        "timestamp": "2026-09-27T16:27:29.664515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.25,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -39.9697265625,
+        "texture_variance": 76.609375,
+        "timestamp": "2026-09-27T16:27:29.664515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.31,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -51.6395263671875,
+        "texture_variance": 83.18359375,
+        "timestamp": "2026-09-27T16:27:29.664515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.43,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -65.35345458984375,
+        "texture_variance": 73.02734375,
+        "timestamp": "2026-09-27T16:27:29.664515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.17,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -31.0367431640625,
+        "texture_variance": 56.44921875,
+        "timestamp": "2026-09-27T16:27:29.664515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.47,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -61.294189453125,
+        "texture_variance": 182.32421875,
+        "timestamp": "2026-09-27T16:27:29.664515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.83,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -31.71014404296875,
+        "texture_variance": 49.7890625,
+        "timestamp": "2026-09-27T16:27:29.665513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.89,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -19.095703125,
+        "texture_variance": 55.12890625,
+        "timestamp": "2026-09-27T16:27:29.665513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.95,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -33.20880126953125,
+        "texture_variance": 54.734375,
+        "timestamp": "2026-09-27T16:27:29.665513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.07,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -87.41802978515625,
+        "texture_variance": 103.93359375,
+        "timestamp": "2026-09-27T16:27:29.665513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -53.10040283203125,
+        "texture_variance": 150.6875,
+        "timestamp": "2026-09-27T16:27:29.665513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.37,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -45.7593994140625,
+        "texture_variance": 58.4765625,
+        "timestamp": "2026-09-27T16:27:29.665513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.49,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -21.918212890625,
+        "texture_variance": 121.09375,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.55,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.3885498046875,
+        "texture_variance": 144.35546875,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.61,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -28.595703125,
+        "texture_variance": 80.828125,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.78999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -60.89630126953125,
+        "texture_variance": 105.80859375,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.85,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -35.01165771484375,
+        "texture_variance": 212.32421875,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.91,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.1768798828125,
+        "texture_variance": 226.87109375,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.21000000000001,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -21.8096923828125,
+        "texture_variance": 90.62890625,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.33,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -27.1572265625,
+        "texture_variance": 148.2109375,
+        "timestamp": "2026-09-27T16:27:29.666515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.25,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -14.1466064453125,
+        "texture_variance": 116.921875,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.43,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -40.10906982421875,
+        "texture_variance": 46.18359375,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.55,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.76995849609375,
+        "texture_variance": 68.07421875,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.78999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -65.96820068359375,
+        "texture_variance": 27.16796875,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.85,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -55.497802734375,
+        "texture_variance": 52.921875,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.91,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -40.9964599609375,
+        "texture_variance": 46.83203125,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.03,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -13.521728515625,
+        "texture_variance": 82.65234375,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.09,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -20.052490234375,
+        "texture_variance": 101.640625,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.15,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -59.940185546875,
+        "texture_variance": 129.9453125,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.33,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.74261474609375,
+        "texture_variance": 56.32421875,
+        "timestamp": "2026-09-27T16:27:29.667512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.39,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.148681640625,
+        "texture_variance": 92.29296875,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.57,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.19683837890625,
+        "texture_variance": 60.1875,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.63,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -19.55914306640625,
+        "texture_variance": 78.125,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.69,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -55.84344482421875,
+        "texture_variance": 143.01953125,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.75,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -80.17822265625,
+        "texture_variance": 160.90625,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.93,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.84539794921875,
+        "texture_variance": 95.00390625,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.39,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -77.927490234375,
+        "texture_variance": 57.2578125,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.45,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.03497314453125,
+        "texture_variance": 61.46484375,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.51,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.1533203125,
+        "texture_variance": 147.17578125,
+        "timestamp": "2026-09-27T16:27:29.668512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.63,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -13.41961669921875,
+        "texture_variance": 124.3125,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.75,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -46.2451171875,
+        "texture_variance": 86.10546875,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.81,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -41.70416259765625,
+        "texture_variance": 98.7734375,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.93,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -71.66156005859375,
+        "texture_variance": 64.25,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.17,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -35.739990234375,
+        "texture_variance": 49.9765625,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.28999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -62.1680908203125,
+        "texture_variance": 26.90625,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.35,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -32.9688720703125,
+        "texture_variance": 54.8828125,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.41,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -5.9149169921875,
+        "texture_variance": 41.31640625,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.65,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.04229736328125,
+        "texture_variance": 76.03515625,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.77,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -44.3031005859375,
+        "texture_variance": 103.5078125,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.00999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.63232421875,
+        "texture_variance": 104.703125,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.07,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -58.09893798828125,
+        "texture_variance": 66.07421875,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -91.09381103515625,
+        "texture_variance": 122.53125,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.47,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -39.5303955078125,
+        "texture_variance": 92.1875,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.53,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -35.59039306640625,
+        "texture_variance": 94.94140625,
+        "timestamp": "2026-09-27T16:27:29.669510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.65,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.247802734375,
+        "texture_variance": 98.11328125,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.71,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.8319091796875,
+        "texture_variance": 166.78125,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.83,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -48.232177734375,
+        "texture_variance": 157.58203125,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.89,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.0908203125,
+        "texture_variance": 156.5546875,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.01,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -5.27142333984375,
+        "texture_variance": 96.46484375,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -72.43389892578125,
+        "texture_variance": 85.44140625,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.55,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -28.87982177734375,
+        "texture_variance": 111.91796875,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.61,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.0711669921875,
+        "texture_variance": 48.00390625,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.67,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -35.67132568359375,
+        "texture_variance": 48.63671875,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.73,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -33.10382080078125,
+        "texture_variance": 52.26953125,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.78999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -71.89727783203125,
+        "texture_variance": 89.76171875,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.85,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -98.85003662109375,
+        "texture_variance": 84.1171875,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.91,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -74.90093994140625,
+        "texture_variance": 76.16015625,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.03,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -40.24456787109375,
+        "texture_variance": 34.05078125,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.73,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -40.3546142578125,
+        "texture_variance": 48.1484375,
+        "timestamp": "2026-09-27T16:27:29.670510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.91,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -33.59576416015625,
+        "texture_variance": 65.72265625,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.97,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -121.92181396484375,
+        "texture_variance": 68.2421875,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.03,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.58306884765625,
+        "texture_variance": 97.484375,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.15,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.7171630859375,
+        "texture_variance": 142.8671875,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.21,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -55.75567626953125,
+        "texture_variance": 89.2734375,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.39,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -81.9755859375,
+        "texture_variance": 120.265625,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.51,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -53.28521728515625,
+        "texture_variance": 47.0078125,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.75,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -45.719970703125,
+        "texture_variance": 103.5234375,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.81,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -118.89654541015625,
+        "texture_variance": 145.94921875,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.99,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -31.345947265625,
+        "texture_variance": 65.58984375,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.11,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -83.26531982421875,
+        "texture_variance": 41.77734375,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.23,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -63.6793212890625,
+        "texture_variance": 77.75,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.28999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -30.231201171875,
+        "texture_variance": 67.96484375,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.35,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.460693359375,
+        "texture_variance": 46.04296875,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.41,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.61590576171875,
+        "texture_variance": 99.17578125,
+        "timestamp": "2026-09-27T16:27:29.671510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.51,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -14.445068359375,
+        "texture_variance": 187.21875,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.75,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -30.47808837890625,
+        "texture_variance": 36.02734375,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.87,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.81756591796875,
+        "texture_variance": 34.38671875,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.93,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -16.02801513671875,
+        "texture_variance": 67.55859375,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.05,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -110.00018310546875,
+        "texture_variance": 98.63671875,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.11,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -39.53497314453125,
+        "texture_variance": 39.06640625,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.23,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.6365966796875,
+        "texture_variance": 57.3203125,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.35,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -64.7144775390625,
+        "texture_variance": 85.55859375,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.59,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.68896484375,
+        "texture_variance": 108.703125,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.65,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.12286376953125,
+        "texture_variance": 45.609375,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.95,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -143.853271484375,
+        "texture_variance": 178.8125,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.01,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -96.64837646484375,
+        "texture_variance": 191.11328125,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.13,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.868896484375,
+        "texture_variance": 60.8671875,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -27.12335205078125,
+        "texture_variance": 70.32421875,
+        "timestamp": "2026-09-27T16:27:29.672509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.37,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -19.50531005859375,
+        "texture_variance": 63.07421875,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.55,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.32696533203125,
+        "texture_variance": 119.19921875,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.23,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -36.1103515625,
+        "texture_variance": 40.5859375,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.41,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -107.23931884765625,
+        "texture_variance": 174.76953125,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.71,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -63.00628662109375,
+        "texture_variance": 114.94921875,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.95,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -30.0841064453125,
+        "texture_variance": 120.75390625,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.07,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -72.7957763671875,
+        "texture_variance": 99.51171875,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.13,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -66.892822265625,
+        "texture_variance": 166.33984375,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -134.9136962890625,
+        "texture_variance": 157.64453125,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.31,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -26.0340576171875,
+        "texture_variance": 63.81640625,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.55,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -130.02362060546875,
+        "texture_variance": 78.75390625,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.61,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.32061767578125,
+        "texture_variance": 65.29296875,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.73,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.026611328125,
+        "texture_variance": 93.828125,
+        "timestamp": "2026-09-27T16:27:29.673512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.78999999999999,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -26.0400390625,
+        "texture_variance": 160.44140625,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.03,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.271484375,
+        "texture_variance": 86.1328125,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.09,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -82.32965087890625,
+        "texture_variance": 110.24609375,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.21,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -23.40972900390625,
+        "texture_variance": 107.44140625,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.27,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -37.37103271484375,
+        "texture_variance": 45.8984375,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.19,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -56.46466064453125,
+        "texture_variance": 59.1640625,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.31,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -23.44366455078125,
+        "texture_variance": 69.51171875,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.37,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -97.307861328125,
+        "texture_variance": 60.984375,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.43,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -34.4202880859375,
+        "texture_variance": 200.5859375,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.79,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -60.7176513671875,
+        "texture_variance": 80.42578125,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.85,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -77.81658935546875,
+        "texture_variance": 65.98828125,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.97,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -50.08270263671875,
+        "texture_variance": 87.96484375,
+        "timestamp": "2026-09-27T16:27:29.674510"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.09,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -61.1937255859375,
+        "texture_variance": 78.1171875,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.15,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -9.31256103515625,
+        "texture_variance": 90.58203125,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.21,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -96.60491943359375,
+        "texture_variance": 68.84375,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.27,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -82.35186767578125,
+        "texture_variance": 90.36328125,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.45,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.25946044921875,
+        "texture_variance": 27.07421875,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.51,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.53656005859375,
+        "texture_variance": 22.24609375,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.57,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -27.6839599609375,
+        "texture_variance": 60.3515625,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.93,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.6636962890625,
+        "texture_variance": 61.13671875,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.05,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -10.009033203125,
+        "texture_variance": 76.22265625,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.27,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -82.3839111328125,
+        "texture_variance": 88.22265625,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.57,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -14.07586669921875,
+        "texture_variance": 59.25,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.81,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -84.31683349609375,
+        "texture_variance": 116.57421875,
+        "timestamp": "2026-09-27T16:27:29.675513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.93,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -21.035888671875,
+        "texture_variance": 91.6796875,
+        "timestamp": "2026-09-27T16:27:29.676508"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.11,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -17.62060546875,
+        "texture_variance": 50.03515625,
+        "timestamp": "2026-09-27T16:27:29.676508"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.17,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -101.45709228515625,
+        "texture_variance": 58.6015625,
+        "timestamp": "2026-09-27T16:27:29.676508"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.23,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -49.19476318359375,
+        "texture_variance": 174.5859375,
+        "timestamp": "2026-09-27T16:27:29.676508"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.29,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -99.89520263671875,
+        "texture_variance": 198.90234375,
+        "timestamp": "2026-09-27T16:27:29.676508"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.41,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -15.2314453125,
+        "texture_variance": 134.171875,
+        "timestamp": "2026-09-27T16:27:29.676508"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.53,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -53.8394775390625,
+        "texture_variance": 73.0390625,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.59,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -54.66204833984375,
+        "texture_variance": 112.01171875,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.71,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -67.000732421875,
+        "texture_variance": 74.4453125,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.77,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.15283203125,
+        "texture_variance": 69.2578125,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.83,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -42.38201904296875,
+        "texture_variance": 85.66015625,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.89,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -26.941162109375,
+        "texture_variance": 72.1796875,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.95,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -95.29400634765625,
+        "texture_variance": 92.05859375,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.63,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -49.8289794921875,
+        "texture_variance": 97.2734375,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.87,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -19.864501953125,
+        "texture_variance": 76.58984375,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.17,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -28.55975341796875,
+        "texture_variance": 46.45703125,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.23,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.63482666015625,
+        "texture_variance": 35.2109375,
+        "timestamp": "2026-09-27T16:27:29.677014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.47,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -26.509033203125,
+        "texture_variance": 64.8984375,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.59,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -89.36981201171875,
+        "texture_variance": 91.6875,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.65,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.04608154296875,
+        "texture_variance": 35.5234375,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.89,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -5.390380859375,
+        "texture_variance": 74.27734375,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.95,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -58.1964111328125,
+        "texture_variance": 78.79296875,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.43,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.33624267578125,
+        "texture_variance": 74.58203125,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.67,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.2486572265625,
+        "texture_variance": 62.66796875,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.73,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.76715087890625,
+        "texture_variance": 38.53125,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.85,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -33.19683837890625,
+        "texture_variance": 66.82421875,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.91,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -146.5081787109375,
+        "texture_variance": 75.72265625,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.15,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -21.65277099609375,
+        "texture_variance": 106.4453125,
+        "timestamp": "2026-09-27T16:27:29.678023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.21,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -24.80657958984375,
+        "texture_variance": 133.58203125,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.95,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.9837646484375,
+        "texture_variance": 45.41015625,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.07,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -153.00152587890625,
+        "texture_variance": 103.6796875,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.13,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -67.71112060546875,
+        "texture_variance": 98.7890625,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.37,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -22.684814453125,
+        "texture_variance": 88.796875,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.49,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -7.033935546875,
+        "texture_variance": 103.2578125,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.61,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -79.0283203125,
+        "texture_variance": 64.33203125,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.67,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -32.13482666015625,
+        "texture_variance": 66.0,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.73,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -6.371826171875,
+        "texture_variance": 91.91015625,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.78999999999999,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -127.3116455078125,
+        "texture_variance": 119.31640625,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.85,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -148.869873046875,
+        "texture_variance": 111.265625,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.15,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -13.9659423828125,
+        "texture_variance": 91.0703125,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.27,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -26.77606201171875,
+        "texture_variance": 108.08984375,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.33,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -131.76763916015625,
+        "texture_variance": 114.8515625,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.39,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -68.57635498046875,
+        "texture_variance": 116.25,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.45,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -29.345947265625,
+        "texture_variance": 139.8203125,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.57,
+          8.09
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -85.568359375,
+        "texture_variance": 74.9140625,
+        "timestamp": "2026-09-27T16:27:29.679027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.78999999999999,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -52.70391845703125,
+        "texture_variance": 71.203125,
+        "timestamp": "2026-09-27T16:27:29.680611"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.91,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -93.7091064453125,
+        "texture_variance": 93.46484375,
+        "timestamp": "2026-09-27T16:27:29.680781"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.03,
+          8.150000000000002
+        ]
+      },
+      "properties": {
+        "confidence": 0.9962784647941589,
+        "cooling_rate": -110.50421142578125,
+        "texture_variance": 36.578125,
+        "timestamp": "2026-09-27T16:27:29.680885"
+      }
+    }
+  ]
+}

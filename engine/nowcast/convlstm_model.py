@@ -261,8 +261,17 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
             crs=crs, transform=transform
         ) as dst:
             dst.write(preds[i].astype(np.float32), 1)
-            # Embed the source DWR observation filename/timestamp as metadata
-            dst.update_tags(base_time=os.path.basename(recent_files[-1]))
+            
+            # Parse the DWR proxy filename into ISO 8601
+            base_filename = os.path.basename(recent_files[-1])
+            try:
+                ts_part = base_filename.replace('dwr_proxy_', '').split('.')[0]
+                dt = datetime.datetime.strptime(ts_part, "%Y%m%d_%H%M")
+                iso_base_time = dt.isoformat() + "Z"
+            except Exception:
+                iso_base_time = base_filename # fallback
+                
+            dst.update_tags(base_time=iso_base_time)
             
         forecast_files.append(out_path)
     

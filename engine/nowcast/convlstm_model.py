@@ -73,7 +73,7 @@ class NowcastConvLSTM(nn.Module):
         
         for t in range(self.out_frames):
             h_t2, c_t2 = self.decoder_cell(decoder_input, (h_t2, c_t2))
-            pred = self.out_conv(h_t2)
+            pred = torch.sigmoid(self.out_conv(h_t2))
             outputs.append(pred)
             
             # Simple recurrent input (feed output back)

@@ -238,11 +238,14 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
     os.makedirs(out_dir, exist_ok=True)
     
     import datetime
-    now = datetime.datetime.utcnow()
+    from timing import get_base_time
+    
+    base_dt, iso_base_time = get_base_time(recent_files[-1])
+        
     forecast_files = []
     
     for i in range(num_forecast_frames):
-        fcst_time = now + datetime.timedelta(minutes=30 * (i + 1))
+        fcst_time = base_dt + datetime.timedelta(minutes=30 * (i + 1))
         ts_str = fcst_time.strftime("%Y%m%d_%H%M")
         out_path = os.path.join(out_dir, f"convlstm_fcst_{ts_str}.tif")
         
@@ -261,16 +264,6 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
             crs=crs, transform=transform
         ) as dst:
             dst.write(preds[i].astype(np.float32), 1)
-            
-            # Parse the DWR proxy filename into ISO 8601
-            base_filename = os.path.basename(recent_files[-1])
-            try:
-                ts_part = base_filename.replace('dwr_proxy_', '').split('.')[0]
-                dt = datetime.datetime.strptime(ts_part, "%Y%m%d_%H%M")
-                iso_base_time = dt.isoformat() + "Z"
-            except Exception:
-                iso_base_time = base_filename # fallback
-                
             dst.update_tags(base_time=iso_base_time)
             
         forecast_files.append(out_path)

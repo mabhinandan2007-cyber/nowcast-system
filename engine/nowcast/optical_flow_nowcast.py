@@ -58,19 +58,16 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
     h, w = curr_data.shape
     y_coords, x_coords = np.mgrid[0:h, 0:w].astype(np.float32)
     
-    now = datetime.datetime.utcnow()
     forecast_files = []
     
     # Base image to advect
     adv_img = curr_data.copy()
     
-    for i in range(num_forecast_frames):
-        # We assume the flow vector represents the movement between the last two frames (e.g. 15 or 30 min)
-        # We need to scale the flow field if the time step of the data is not 30 minutes.
-        # Assuming the radar data spacing is 30 mins, we use (i+1) * flow.
-        # But wait, radar data might be spaced by minutes. Let's just assume the flow represents a 30-min step
-        # or we just blindly extrapolate. Let's extrapolate linearly by (i+1).
+    # Parse base_time here so we can anchor the forecast to it
+    from timing import get_base_time
+    base_dt, iso_base_time = get_base_time(frames[-1])
         
+    for i in range(num_forecast_frames):
         # Warp coordinates
         map_x = x_coords - (i + 1) * flow[..., 0]
         map_y = y_coords - (i + 1) * flow[..., 1]
@@ -82,7 +79,7 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
         extrapolated = np.where(extrapolated == 0, np.nan, extrapolated)
         
         # Save the output frames
-        fcst_time = now + datetime.timedelta(minutes=30 * (i + 1))
+        fcst_time = base_dt + datetime.timedelta(minutes=30 * (i + 1))
         ts_str = fcst_time.strftime("%Y%m%d_%H%M")
         out_path = os.path.join(OUT_DIR, f"opt_flow_fcst_{ts_str}.tif")
         
@@ -94,17 +91,6 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
             crs=crs, transform=transform
         ) as dst:
             dst.write(extrapolated.astype(np.float32), 1)
-            
-            # Parse the DWR proxy filename (e.g. dwr_proxy_20260927_1618.tif) into ISO 8601
-            base_filename = os.path.basename(frames[-1])
-            try:
-                # Extract YYYYMMDD_HHMM
-                ts_part = base_filename.replace('dwr_proxy_', '').split('.')[0]
-                dt = datetime.datetime.strptime(ts_part, "%Y%m%d_%H%M")
-                iso_base_time = dt.isoformat() + "Z"
-            except Exception:
-                iso_base_time = base_filename # fallback
-                
             dst.update_tags(base_time=iso_base_time)
             
         forecast_files.append(out_path)

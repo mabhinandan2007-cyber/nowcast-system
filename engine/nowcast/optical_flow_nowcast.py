@@ -95,6 +95,18 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
         ) as dst:
             dst.write(extrapolated.astype(np.float32), 1)
             
+            # Parse the DWR proxy filename (e.g. dwr_proxy_20260927_1618.tif) into ISO 8601
+            base_filename = os.path.basename(frames[-1])
+            try:
+                # Extract YYYYMMDD_HHMM
+                ts_part = base_filename.replace('dwr_proxy_', '').split('.')[0]
+                dt = datetime.datetime.strptime(ts_part, "%Y%m%d_%H%M")
+                iso_base_time = dt.isoformat() + "Z"
+            except Exception:
+                iso_base_time = base_filename # fallback
+                
+            dst.update_tags(base_time=iso_base_time)
+            
         forecast_files.append(out_path)
         
     print(f"Successfully saved {num_forecast_frames} Farneback optical flow forecast frames.")

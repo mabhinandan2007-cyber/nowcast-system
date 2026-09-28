@@ -16,9 +16,9 @@ def compare():
     opt_files = run_optical_flow_nowcast(num_forecast_frames=12)
     
     print("Running ConvLSTM baseline...")
-    conv_preds = run_convlstm_inference(num_forecast_frames=12)
+    conv_files = run_convlstm_inference(num_forecast_frames=12)
     
-    if not opt_files or conv_preds is None:
+    if not opt_files or not conv_files:
         print("Missing outputs. Cannot compare.")
         return
         
@@ -32,9 +32,15 @@ def compare():
             with rasterio.open(opt_files[idx]) as src:
                 opt_frames.append(src.read(1))
         else:
-            opt_frames.append(np.zeros_like(conv_preds[0]))
+            opt_frames.append(np.zeros((128, 128)))
             
-    conv_frames = [conv_preds[idx] for idx in indices]
+    conv_frames = []
+    for idx in indices:
+        if idx < len(conv_files):
+            with rasterio.open(conv_files[idx]) as src:
+                conv_frames.append(src.read(1))
+        else:
+            conv_frames.append(np.zeros((128, 128)))
     
     fig, axes = plt.subplots(2, 3, figsize=(15, 10))
     fig.suptitle('Nowcast Baseline Comparison: Optical Flow (PySteps) vs ConvLSTM', fontsize=16)

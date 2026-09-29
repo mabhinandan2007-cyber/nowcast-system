@@ -233,11 +233,53 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
     # Denormalize
     preds = preds * 60.0
     
+    # Save the output frames to disk
+    out_dir = os.path.join(base_dir, '..', 'data', 'nowcast_convlstm')
+    os.makedirs(out_dir, exist_ok=True)
+    
+    import datetime
+    now = datetime.datetime.utcnow()
+    forecast_files = []
+    
+    for i in range(num_forecast_frames):
+        fcst_time = now + datetime.timedelta(minutes=30 * (i + 1))
+        ts_str = fcst_time.strftime("%Y%m%d_%H%M")
+        out_path = os.path.join(out_dir, f"convlstm_fcst_{ts_str}.tif")
+        
+        # We need crs/transform from the last input file for geospatial alignment
+        with rasterio.open(recent_files[-1]) as src:
+            transform = src.transform
+            crs = src.crs
+            
+        # The ConvLSTM outputs a resized 128x128 grid, we save it as is or resize it back.
+        # Saving as is for simplicity, backend API can handle the grid resolution.
+        with rasterio.open(
+            out_path, 'w',
+            driver='GTiff',
+            height=target_size[0], width=target_size[1],
+            count=1, dtype=np.float32,
+            crs=crs, transform=transform
+        ) as dst:
+            dst.write(preds[i].astype(np.float32), 1)
+            
+            # Parse the DWR proxy filename into ISO 8601
+            base_filename = os.path.basename(recent_files[-1])
+            try:
+                ts_part = base_filename.replace('dwr_proxy_', '').split('.')[0]
+                dt = datetime.datetime.strptime(ts_part, "%Y%m%d_%H%M")
+                iso_base_time = dt.isoformat() + "Z"
+            except Exception:
+                iso_base_time = base_filename # fallback
+                
+            dst.update_tags(base_time=iso_base_time)
+            
+        forecast_files.append(out_path)
+    
     # Output stats
     print(f"ConvLSTM inference produced {len(preds)} frames.")
     print(f"Raw Output Tensor Stats (after denorm) - Min: {np.min(preds):.4f}, Max: {np.max(preds):.4f}, Mean: {np.mean(preds):.4f}")
     
-    return preds
+    return forecast_files
 
 if __name__ == "__main__":
     train_convlstm()

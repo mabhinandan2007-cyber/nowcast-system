@@ -66,49 +66,78 @@ def download_latest_nexrad(station="KTLX"):
         
     return local_path
 
-def process_nexrad_to_india_grid(radar_file, output_path):
+def process_nexrad_to_cartesian(radar_file, output_path, scan_time, ingested_at, center_lat=21.0, center_lon=79.0, station="KABR"):
     """
     proxy_source: NEXRAD
-    Reads the real NEXRAD file and maps its reflectivity to a configurable 
-    India-region bounding box (1-3km resolution) for architecture-testing.
+    Reads the real NEXRAD file and maps its reflectivity to a Cartesian grid 
+    using pyart.map.grid_from_radars.
+    Domain: +/-256 km around the radar, 2 km cells (256x256).
     """
-    # India bounding box (approx)
-    lon_min, lat_max = 68.0, 38.0
-    lon_max, lat_min = 98.0, 6.0
+    width, height = 256, 256
+    pixel_size_km = 2.0
+    proxy_source = "NEXRAD"
     
-    # Target resolution: approx 3km (0.027 degrees)
-    pixel_size = 0.027
-    width = int((lon_max - lon_min) / pixel_size)
-    height = int((lat_max - lat_min) / pixel_size)
+    source_lat = 0.0
+    source_lon = 0.0
+    relocated = False
     
-    if HAS_PYART:
+    if HAS_PYART and radar_file != "dummy_file.nc":
         try:
             logger.info("Parsing NEXRAD with PyART...")
             radar = pyart.io.read_nexrad_archive(radar_file)
-            # Extract basic reflectivity
-            refl = radar.fields['reflectivity']['data']
-            # We take a simple slice (e.g. lowest sweep) and map it onto the India grid.
-            # Since NEXRAD is a circle and India is large, this is a proxy mapping.
-            # We'll just tile/resize the 2D array to our target grid size.
-            sweep_data = refl[radar.get_slice(0)]
-            import cv2 # try to use cv2 for quick resize if available
-            sweep_2d = np.ma.filled(sweep_data, 0)
-            proxy_grid = cv2.resize(sweep_2d, (width, height))
-            logger.info("Real NEXRAD data mapped to India grid.")
+            
+            source_lat = float(radar.latitude['data'][0])
+            source_lon = float(radar.longitude['data'][0])
+            
+            if center_lat is not None and center_lon is not None:
+                radar.latitude['data'] = np.array([center_lat], dtype=np.float64)
+                radar.longitude['data'] = np.array([center_lon], dtype=np.float64)
+                relocated = True
+            
+            logger.info("Gridding radar data using pyart.map.grid_from_radars...")
+            grid = pyart.map.grid_from_radars(
+                (radar,),
+                grid_shape=(10, height, width),
+                grid_limits=(
+                    (0, 15000), 
+                    (-256000.0, 256000.0), 
+                    (-256000.0, 256000.0)
+                ),
+                fields=['reflectivity']
+            )
+            
+            ref_data = grid.fields['reflectivity']['data']
+            # Composite reflectivity (max over vertical axis)
+            comp_ref = np.ma.max(ref_data, axis=0)
+            proxy_grid = np.ma.filled(comp_ref, np.nan)
+            logger.info("Real NEXRAD data successfully gridded to Cartesian.")
         except Exception as e:
             logger.error(f"PyART processing failed: {e}. Falling back to pseudo-data.")
             proxy_grid = _generate_pseudo_grid(width, height)
+            proxy_grid = np.where(proxy_grid == 0, np.nan, proxy_grid)
+            proxy_source = "PSEUDO_DATA"
     else:
-        logger.info("Generating pseudo-data seeded from real file size (proxy_source: NEXRAD)")
-        # Seed with file size so it's tied to the real file (if it exists)
-        if os.path.exists(radar_file):
+        logger.info("Generating pseudo-data seeded from real file size (proxy_source: PSEUDO_DATA)")
+        proxy_source = "PSEUDO_DATA"
+        if os.path.exists(radar_file) and radar_file != "dummy_file.nc":
             file_size = os.path.getsize(radar_file)
         else:
             file_size = int(time.time())
+            
         np.random.seed(file_size % 10000)
         proxy_grid = _generate_pseudo_grid(width, height)
+        proxy_grid = np.where(proxy_grid == 0, np.nan, proxy_grid)
         
-    transform = from_origin(lon_min, lat_max, pixel_size, pixel_size)
+    # Approx degrees per km for the affine transform
+    pixel_size_deg = pixel_size_km / 111.0
+    
+    c_lat = center_lat if center_lat is not None else source_lat
+    c_lon = center_lon if center_lon is not None else source_lon
+    
+    lon_min = c_lon - (width / 2.0) * pixel_size_deg
+    lat_max = c_lat + (height / 2.0) * pixel_size_deg
+    
+    transform = from_origin(lon_min, lat_max, pixel_size_deg, pixel_size_deg)
     
     with rasterio.open(
         output_path,
@@ -119,13 +148,25 @@ def process_nexrad_to_india_grid(radar_file, output_path):
         count=1,
         dtype=np.float32,
         crs='+proj=latlong',
+        nodata=np.nan,
         transform=transform,
     ) as dst:
         dst.write(proxy_grid.astype(np.float32), 1)
-        # Add metadata tag
-        dst.update_tags(proxy_source="NEXRAD")
+        # Add metadata tags
+        dst.update_tags(
+            proxy_source=proxy_source,
+            scan_time=scan_time,
+            ingested_at=ingested_at,
+            source_radar=station,
+            source_lat=str(source_lat),
+            source_lon=str(source_lon),
+            display_lat=str(c_lat),
+            display_lon=str(c_lon),
+            relocated=str(relocated),
+            pixel_size_km=str(pixel_size_km)
+        )
         
-    logger.info(f"Saved DWR proxy grid to {output_path}")
+    logger.info(f"Saved DWR grid to {output_path}")
 
 def _generate_pseudo_grid(width, height):
     # Simulated convection cells
@@ -140,24 +181,39 @@ def _generate_pseudo_grid(width, height):
         grid[mask] = intensity
     return grid
 
-def fetch_and_process_dwr():
+def fetch_and_process_dwr(station="KABR"):
+    ingested_at = datetime.datetime.utcnow().isoformat() + "Z"
+    
     try:
-        radar_file = download_latest_nexrad("KABR")
+        radar_file = download_latest_nexrad(station)
     except Exception as e:
         logger.error(f"Download failed: {e}")
         radar_file = None
         
     try:
-        timestamp = datetime.datetime.utcnow().strftime("%Y%m%d_%H%M")
+        if radar_file and radar_file != "dummy_file.nc" and os.path.exists(radar_file):
+            # Extract scan time from NEXRAD filename e.g. KABR20260927_161144_V06
+            base_filename = os.path.basename(radar_file)
+            try:
+                time_str = base_filename[4:19]
+                dt = datetime.datetime.strptime(time_str, "%Y%m%d_%H%M%S")
+                timestamp = dt.strftime("%Y%m%d_%H%M")
+                scan_time = dt.isoformat() + "Z"
+            except Exception as e:
+                raise ValueError(f"Failed to parse time from real NEXRAD filename {base_filename}") from e
+        else:
+            dt = datetime.datetime.utcnow()
+            timestamp = dt.strftime("%Y%m%d_%H%M")
+            scan_time = dt.isoformat() + "Z"
+            
         output_filename = f"dwr_proxy_{timestamp}.tif"
         output_path = os.path.join(DATA_DIR, output_filename)
         
         if not radar_file:
             logger.warning("No radar file downloaded, falling back to pure pseudo-data generation.")
-            # Set to a dummy path so process_nexrad_to_india_grid falls back
             radar_file = "dummy_file.nc" 
             
-        process_nexrad_to_india_grid(radar_file, output_path)
+        process_nexrad_to_cartesian(radar_file, output_path, scan_time, ingested_at, station=station)
     except Exception as e:
         logger.error(f"Error in DWR proxy fetch: {e}")
 

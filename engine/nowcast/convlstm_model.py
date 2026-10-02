@@ -45,7 +45,7 @@ class ConvLSTMCell(nn.Module):
 
 # --- Encoder-Decoder ConvLSTM Architecture ---
 class NowcastConvLSTM(nn.Module):
-    def __init__(self, in_channels=1, hidden_dim=16, kernel_size=(3,3), out_frames=12):
+    def __init__(self, in_channels=2, hidden_dim=16, kernel_size=(3,3), out_frames=12):
         super(NowcastConvLSTM, self).__init__()
         self.out_frames = out_frames
         
@@ -54,7 +54,7 @@ class NowcastConvLSTM(nn.Module):
         # Decoder cell
         self.decoder_cell = ConvLSTMCell(input_dim=hidden_dim, hidden_dim=hidden_dim, kernel_size=kernel_size, bias=True)
         
-        self.out_conv = nn.Conv2d(in_channels=hidden_dim, out_channels=in_channels, kernel_size=1)
+        self.out_conv = nn.Conv2d(in_channels=hidden_dim, out_channels=1, kernel_size=1)
         
     def forward(self, x, teacher_forcing=False, target=None):
         # x shape: (B, T_in, C, H, W)
@@ -124,7 +124,12 @@ def build_synthetic_dataset(num_seqs=50, seq_in=3, seq_out=12, img_size=(128, 12
     X, Y = [], []
     for _ in range(num_seqs):
         x_seq, y_seq = create_synthetic_sequence(seq_in, seq_out, img_size)
-        X.append(x_seq[:, np.newaxis, :, :])
+        
+        # x_seq is (T, H, W). Add mask channel to make it (T, 2, H, W)
+        mask = np.ones_like(x_seq)
+        x_seq_2ch = np.stack([x_seq, mask], axis=1)
+        
+        X.append(x_seq_2ch)
         Y.append(y_seq[:, np.newaxis, :, :])
         
     return torch.tensor(np.array(X), dtype=torch.float32), torch.tensor(np.array(Y), dtype=torch.float32)
@@ -144,7 +149,7 @@ def train_convlstm():
     model_dir = os.path.join(base_dir, 'models')
     os.makedirs(model_dir, exist_ok=True)
     
-    model = NowcastConvLSTM(in_channels=1, hidden_dim=16, out_frames=12)
+    model = NowcastConvLSTM(in_channels=2, hidden_dim=16, out_frames=12)
     # Moved to GPU if available, else CPU (for this env likely CPU is fine)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = model.to(device)
@@ -183,7 +188,7 @@ def train_convlstm():
     torch.save(model.state_dict(), out_path)
     print(f"ConvLSTM weights saved to {out_path}")
 
-def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
+def run_convlstm_inference(num_forecast_frames=12, target_size=None):
     # Load model
     base_dir = os.path.dirname(os.path.abspath(__file__))
     dwr_dir = os.path.join(base_dir, '..', 'data', 'dwr_proxy')
@@ -194,7 +199,7 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
         return None
         
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model = NowcastConvLSTM(in_channels=1, hidden_dim=16, out_frames=num_forecast_frames)
+    model = NowcastConvLSTM(in_channels=2, hidden_dim=16, out_frames=num_forecast_frames)
     model.load_state_dict(torch.load(model_path, map_location=device))
     model = model.to(device)
     model.eval()
@@ -212,21 +217,35 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
         recent_files.insert(0, recent_files[0])
         
     x_seq = []
+    native_shape = None
     for f in recent_files:
         with rasterio.open(f) as src:
             img = src.read(1)
-            img = np.nan_to_num(img)
-            img = cv2.resize(img, target_size)
+            if native_shape is None:
+                native_shape = img.shape
+            
+            mask = (~np.isnan(img)).astype(np.float32)
+            img = np.nan_to_num(img, nan=0.0)
+            
+            if target_size is not None and target_size != img.shape:
+                img = cv2.resize(img, target_size)
+                mask = cv2.resize(mask, target_size)
+                mask = (mask > 0.5).astype(np.float32)
+                
             # Normalize input
             img = np.clip(img, 0, 60) / 60.0
-            x_seq.append(img)
             
-    x_tensor = torch.tensor(np.array(x_seq), dtype=torch.float32).unsqueeze(0).unsqueeze(2) # (1, 3, 1, H, W)
+            x_seq.append(np.stack([img, mask], axis=0))
+            
+    final_shape = target_size if target_size is not None else native_shape
+    
+    x_tensor = torch.tensor(np.array(x_seq), dtype=torch.float32).unsqueeze(0) # (1, 3, 2, H, W)
     x_tensor = x_tensor.to(device)
     
     print("Running ConvLSTM inference...")
     with torch.no_grad():
         preds = model(x_tensor)
+        print("Model Output Tensor Shape:", preds.shape)
         
     preds = preds.squeeze(0).squeeze(1).cpu().numpy() # (12, H, W)
     
@@ -254,14 +273,20 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=(128, 128)):
             transform = src.transform
             crs = src.crs
             
-        # The ConvLSTM outputs a resized 128x128 grid, we save it as is or resize it back.
-        # Saving as is for simplicity, backend API can handle the grid resolution.
+        # Scale the transform if the output resolution differs from the native resolution
+        if final_shape != native_shape:
+            scale_y = native_shape[0] / final_shape[0]
+            scale_x = native_shape[1] / final_shape[1]
+            transform = transform * transform.scale(scale_x, scale_y)
+            
+        # Saving predictions
         with rasterio.open(
             out_path, 'w',
             driver='GTiff',
-            height=target_size[0], width=target_size[1],
+            height=final_shape[0], width=final_shape[1],
             count=1, dtype=np.float32,
-            crs=crs, transform=transform
+            crs=crs, transform=transform,
+            nodata=np.nan
         ) as dst:
             dst.write(preds[i].astype(np.float32), 1)
             dst.update_tags(base_time=iso_base_time)

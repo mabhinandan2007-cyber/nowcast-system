@@ -26,13 +26,23 @@ def compare():
     indices = [0, 5, 11]
     time_labels = ["+30m", "+3h", "+6h"]
     
+    opt_shape = (256, 256)
+    if opt_files:
+        with rasterio.open(opt_files[0]) as src:
+            opt_shape = src.shape
+            
+    conv_shape = (256, 256)
+    if conv_files:
+        with rasterio.open(conv_files[0]) as src:
+            conv_shape = src.shape
+    
     opt_frames = []
     for idx in indices:
         if idx < len(opt_files):
             with rasterio.open(opt_files[idx]) as src:
                 opt_frames.append(src.read(1))
         else:
-            opt_frames.append(np.zeros((128, 128)))
+            opt_frames.append(np.zeros(opt_shape))
             
     conv_frames = []
     for idx in indices:
@@ -40,7 +50,7 @@ def compare():
             with rasterio.open(conv_files[idx]) as src:
                 conv_frames.append(src.read(1))
         else:
-            conv_frames.append(np.zeros((128, 128)))
+            conv_frames.append(np.zeros(conv_shape))
     
     fig, axes = plt.subplots(2, 3, figsize=(15, 10))
     fig.suptitle('Nowcast Baseline Comparison: Optical Flow (PySteps) vs ConvLSTM', fontsize=16)

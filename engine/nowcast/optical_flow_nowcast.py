@@ -32,12 +32,20 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
     with rasterio.open(frames[-2]) as src:
         prev_data = src.read(1)
         prev_data = np.nan_to_num(prev_data, nan=0.0)
+        from timing import get_base_time
+        prev_dt, _ = get_base_time(frames[-2])
         
     with rasterio.open(frames[-1]) as src:
-        curr_data = src.read(1)
-        curr_data = np.nan_to_num(curr_data, nan=0.0)
+        curr_data_raw = src.read(1)
+        curr_data = np.nan_to_num(curr_data_raw, nan=0.0)
         transform = src.transform
         crs = src.crs
+        curr_dt, iso_base_time = get_base_time(frames[-1])
+        
+    # Calculate true time gap between frames in minutes
+    actual_gap_minutes = (curr_dt - prev_dt).total_seconds() / 60.0
+    if actual_gap_minutes <= 0:
+        actual_gap_minutes = 5.0 # fallback if times are identical or inverted
         
     # OpenCV Optical flow expects 8-bit images or 32-bit floats
     # Reflectivity usually 0-60 dBZ, normalize to 0-255 for better flow estimation
@@ -54,31 +62,26 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
     
     # 2. Extrapolate forward
     print(f"Extrapolating {num_forecast_frames} frames (6 hours at 30-min intervals)...")
+    print(f"Input frames were {actual_gap_minutes:.1f} minutes apart. Scaling flow field accordingly.")
     
     h, w = curr_data.shape
     y_coords, x_coords = np.mgrid[0:h, 0:w].astype(np.float32)
     
     forecast_files = []
-    
-    # Base image to advect
-    adv_img = curr_data.copy()
-    
-    # Parse base_time here so we can anchor the forecast to it
-    from timing import get_base_time
-    base_dt, iso_base_time = get_base_time(frames[-1])
         
     for i in range(num_forecast_frames):
+        target_minutes_ahead = 30 * (i + 1)
+        flow_multiplier = target_minutes_ahead / actual_gap_minutes
+        
         # Warp coordinates
-        map_x = x_coords - (i + 1) * flow[..., 0]
-        map_y = y_coords - (i + 1) * flow[..., 1]
+        map_x = x_coords - flow_multiplier * flow[..., 0]
+        map_y = y_coords - flow_multiplier * flow[..., 1]
         
-        # Remap
-        extrapolated = cv2.remap(curr_data, map_x, map_y, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
-        
-        # Restore NaNs where 0
-        extrapolated = np.where(extrapolated == 0, np.nan, extrapolated)
+        # Remap using the RAW array (which contains true NaNs) and set out-of-bounds to NaN
+        extrapolated = cv2.remap(curr_data_raw, map_x, map_y, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=np.nan)
         
         # Save the output frames
+        base_dt = curr_dt
         fcst_time = base_dt + datetime.timedelta(minutes=30 * (i + 1))
         ts_str = fcst_time.strftime("%Y%m%d_%H%M")
         out_path = os.path.join(OUT_DIR, f"opt_flow_fcst_{ts_str}.tif")
@@ -88,7 +91,8 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
             driver='GTiff',
             height=h, width=w,
             count=1, dtype=np.float32,
-            crs=crs, transform=transform
+            crs=crs, transform=transform,
+            nodata=np.nan
         ) as dst:
             dst.write(extrapolated.astype(np.float32), 1)
             dst.update_tags(base_time=iso_base_time)

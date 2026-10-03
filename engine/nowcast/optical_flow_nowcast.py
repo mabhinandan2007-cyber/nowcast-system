@@ -21,8 +21,15 @@ def get_recent_frames(num_frames=2):
     files.sort(key=os.path.getctime)
     return files[-num_frames:]
 
-def run_optical_flow_nowcast(num_forecast_frames=12):
-    frames = get_recent_frames(num_frames=2)
+def run_optical_flow_nowcast(num_forecast_frames=12, input_frames=None, out_dir=None):
+    if input_frames is None:
+        frames = get_recent_frames(num_frames=2)
+    else:
+        frames = input_frames
+        
+    if out_dir is None:
+        out_dir = OUT_DIR
+    
     if len(frames) < 2:
         print("Need at least 2 frames for Farneback optical flow.")
         return None
@@ -84,7 +91,7 @@ def run_optical_flow_nowcast(num_forecast_frames=12):
         base_dt = curr_dt
         fcst_time = base_dt + datetime.timedelta(minutes=30 * (i + 1))
         ts_str = fcst_time.strftime("%Y%m%d_%H%M")
-        out_path = os.path.join(OUT_DIR, f"opt_flow_fcst_{ts_str}.tif")
+        out_path = os.path.join(out_dir, f"opt_flow_fcst_{ts_str}.tif")
         
         with rasterio.open(
             out_path, 'w',

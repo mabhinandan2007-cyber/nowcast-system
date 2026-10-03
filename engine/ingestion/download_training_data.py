@@ -22,8 +22,20 @@ def download_data(station, date_str, base_dir="D:/SIH_Data/training_raw"):
     os.makedirs(target_dir, exist_ok=True)
     print(f"Downloading to {target_dir}...")
     
+    # Filter already downloaded files
+    missing_scans = []
+    for scan in scans:
+        if not os.path.exists(os.path.join(target_dir, scan.filename)):
+            missing_scans.append(scan)
+            
+    skipped = len(scans) - len(missing_scans)
+    print(f"Skipping {skipped} already downloaded scans. {len(missing_scans)} left to download.")
+    
+    if len(missing_scans) == 0:
+        return
+        
     # Download
-    results = conn.download(scans, target_dir, threads=20)
+    results = conn.download(missing_scans, target_dir, threads=20)
     print(f"Successfully downloaded {results.success_count} files.")
     if results.failed_count > 0:
         print(f"Failed to download {results.failed_count} files.")

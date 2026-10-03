@@ -2,24 +2,23 @@ import os
 import datetime
 
 def get_base_time(path):
-    """
-    Parses the DWR proxy filename (e.g. dwr_proxy_20260927_1618.tif)
-    and returns (base_dt, iso_base_time).
-    Raises ValueError if the filename cannot be parsed.
-    """
-    base_filename = os.path.basename(path)
-    
-    # Try to extract YYYYMMDD_HHMM
-    # Assuming filename format is dwr_proxy_YYYYMMDD_HHMM.tif
-    if not base_filename.startswith('dwr_proxy_'):
-        raise ValueError(f"Filename {base_filename} does not start with expected prefix 'dwr_proxy_'")
-        
-    ts_part = base_filename.replace('dwr_proxy_', '').split('.')[0]
-    
+    import rasterio
+    import re
     try:
-        base_dt = datetime.datetime.strptime(ts_part, "%Y%m%d_%H%M")
-    except ValueError as e:
-        raise ValueError(f"Could not parse timestamp '{ts_part}' from filename '{base_filename}'. Expected YYYYMMDD_HHMM.") from e
+        with rasterio.open(path) as src:
+            tags = src.tags()
+            if 'scan_time' in tags:
+                iso_time = tags['scan_time']
+                dt = datetime.datetime.fromisoformat(iso_time.replace('Z', '+00:00')).replace(tzinfo=None)
+                return dt, iso_time
+    except Exception:
+        pass
         
-    iso_base_time = base_dt.isoformat() + "Z"
-    return base_dt, iso_base_time
+    base_filename = os.path.basename(path)
+    match = re.search(r"(\d{8}_\d{4})", base_filename)
+    if match:
+        ts_part = match.group(1)
+        base_dt = datetime.datetime.strptime(ts_part, "%Y%m%d_%H%M")
+        return base_dt, base_dt.isoformat() + "Z"
+        
+    raise ValueError(f"Could not parse timestamp from {base_filename} and no scan_time tag.")

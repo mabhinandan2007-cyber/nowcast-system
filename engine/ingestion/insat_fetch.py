@@ -29,11 +29,22 @@ def parse_insat_hdf_to_geotiff(hdf_path, output_path):
         with h5py.File(hdf_path, 'r') as hf:
             # Note: The exact dataset path depends on the specific INSAT L1B product
             # Typically something like 'IMG_TIR1' or 'TIR1' 
-            if 'IMG_TIR1' in hf.keys():
-                tir_data = hf['IMG_TIR1'][:]
-            else:
-                # Fallback if structure is different
-                tir_data = list(hf.values())[0][:] 
+            # Read TIR1 raw counts and apply LUT
+            if 'IMG_TIR1' not in hf.keys() or 'IMG_TIR1_TEMP' not in hf.keys():
+                raise ValueError("IMG_TIR1 or IMG_TIR1_TEMP LUT not found in HDF5")
+                
+            tir1_counts = hf['IMG_TIR1'][:]
+            # If it has a dummy first dimension (e.g., 1, 1616, 1737), squeeze it
+            if len(tir1_counts.shape) == 3 and tir1_counts.shape[0] == 1:
+                tir1_counts = tir1_counts[0]
+                
+            tir1_lut = hf['IMG_TIR1_TEMP'][:]
+            tir1_data = tir1_lut[tir1_counts]
+            
+            # 1023 is the raw _FillValue for digital counts in IMG_TIR1
+            tir1_data = np.where(tir1_counts == 1023, np.nan, tir1_data)
+            
+            tir_data = tir1_data
             
             # Simulated geo-bounds for INSAT-3D (India focus)
             lon_min, lat_max = 68.0, 38.0

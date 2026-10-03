@@ -75,11 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reposition zoom control to bottom right
         L.control.zoom({ position: 'bottomright' }).addTo(state.map);
 
-        // CartoDB Dark Matter Tiles (ideal for radar/lightning contrast)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; OpenStreetMap contributors',
-            subdomains: 'abcd',
-            maxZoom: 19
+        // Esri Dark Gray Canvas Basemap (Clean, high-contrast, free, no API key watermark)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+            maxZoom: 16
+        }).addTo(state.map);
+
+        // Esri Dark Gray Reference layer (Labels & boundaries)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '',
+            maxZoom: 16
         }).addTo(state.map);
 
         // Initialize Layer Groups
@@ -465,6 +470,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.hazardFeatures = hazards.features;
                 const zones = hazards.features.filter(f => f.properties?.hazard_type === 'hazard_zone');
                 buildSidePanelCards(zones);
+
+                // Auto-center on active hazard cluster on initial load
+                if (!state.hasAutoCentered && zones.length > 0 && zones[0].properties?.centroid) {
+                    state.hasAutoCentered = true;
+                    const c = zones[0].properties.centroid;
+                    state.map.setView([c[1], c[0]], 6);
+                }
             }
 
             // 3. Forecast

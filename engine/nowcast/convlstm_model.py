@@ -188,11 +188,15 @@ def train_convlstm():
     torch.save(model.state_dict(), out_path)
     print(f"ConvLSTM weights saved to {out_path}")
 
-def run_convlstm_inference(num_forecast_frames=12, target_size=None):
+def run_convlstm_inference(num_forecast_frames=12, target_size=None, input_frames=None, out_dir=None):
     # Load model
     base_dir = os.path.dirname(os.path.abspath(__file__))
     dwr_dir = os.path.join(base_dir, '..', 'data', 'dwr_proxy')
     model_path = os.path.join(base_dir, 'models', 'convlstm.pt')
+    
+    if out_dir is None:
+        out_dir = os.path.join(base_dir, '..', 'data', 'nowcast_convlstm')
+    os.makedirs(out_dir, exist_ok=True)
     
     if not os.path.exists(model_path):
         print("ConvLSTM weights not found. Train first.")
@@ -205,14 +209,16 @@ def run_convlstm_inference(num_forecast_frames=12, target_size=None):
     model.eval()
     
     import cv2
-    files = glob.glob(os.path.join(dwr_dir, '*.tif'))
-    files.sort(key=os.path.getctime)
-    if len(files) == 0:
-        return None
+    if input_frames is None:
+        files = glob.glob(os.path.join(dwr_dir, '*.tif'))
+        files.sort(key=os.path.getctime)
+        if len(files) == 0:
+            return None
+            
+        recent_files = files[-3:]
+    else:
+        recent_files = input_frames
         
-    # Read the latest 3 files to give a sequence, not just repeating 1
-    recent_files = files[-3:]
-    # If we have less than 3, just pad with the first one
     while len(recent_files) < 3:
         recent_files.insert(0, recent_files[0])
         

@@ -120,6 +120,53 @@ def create_synthetic_sequence(seq_in=3, seq_out=12, img_size=(128, 128)):
     
     return seq[:seq_in], seq[seq_in:]
 
+import glob
+
+def build_real_dataset(seq_in=3, seq_out=12, crop_size=128):
+    import rasterio
+    import os
+    X, Y = [], []
+    base_dir = 'D:/SIH_Data/training_sequences'
+    folders = [os.path.join(base_dir, 'KTLX_20260424'), os.path.join(base_dir, 'KTLX_20260508')]
+    
+    for folder in folders:
+        files = glob.glob(os.path.join(folder, '*.tif'))
+        # Sort files to ensure temporal order
+        files.sort(key=os.path.getctime)
+        if len(files) < seq_in + seq_out:
+            continue
+            
+        for i in range(len(files) - (seq_in + seq_out) + 1):
+            window_files = files[i:i + seq_in + seq_out]
+            
+            with rasterio.open(window_files[0]) as src:
+                h, w = src.shape
+                
+            top = np.random.randint(0, max(1, h - crop_size))
+            left = np.random.randint(0, max(1, w - crop_size))
+            
+            x_seq, y_seq = [], []
+            
+            for j, f in enumerate(window_files):
+                with rasterio.open(f) as src:
+                    img = src.read(1)
+                    crop_img = img[top:top+crop_size, left:left+crop_size]
+                    
+                    if j < seq_in:
+                        mask = (~np.isnan(crop_img)).astype(np.float32)
+                        clean_img = np.nan_to_num(crop_img, nan=0.0)
+                        clean_img = np.clip(clean_img, 0, 60) / 60.0
+                        x_seq.append(np.stack([clean_img, mask], axis=0))
+                    else:
+                        # Keep NaNs for loss masking, but normalize valid values
+                        target_img = np.clip(crop_img, 0, 60) / 60.0
+                        y_seq.append(target_img[np.newaxis, :, :])
+                        
+            X.append(np.stack(x_seq, axis=0))
+            Y.append(np.stack(y_seq, axis=0))
+            
+    return torch.tensor(np.array(X), dtype=torch.float32), torch.tensor(np.array(Y), dtype=torch.float32)
+
 def build_synthetic_dataset(num_seqs=50, seq_in=3, seq_out=12, img_size=(128, 128)):
     X, Y = [], []
     for _ in range(num_seqs):
@@ -134,14 +181,18 @@ def build_synthetic_dataset(num_seqs=50, seq_in=3, seq_out=12, img_size=(128, 12
         
     return torch.tensor(np.array(X), dtype=torch.float32), torch.tensor(np.array(Y), dtype=torch.float32)
 
-def weighted_mse_loss(pred, target):
-    # Upweight pixels that have actual storm data in the target
-    # target is normalized [0, 1]. Let's weight pixels > 0.1 (6 dBZ) higher.
+def weighted_mse_loss(pred, target_raw):
+    valid_mask = ~torch.isnan(target_raw)
+    target = torch.nan_to_num(target_raw, nan=0.0)
+
     weight = torch.ones_like(target)
-    weight[target > 0.1] = 10.0  # 10x penalty for missing storm pixels
-    
+    weight[target > 0.1] = 10.0
+    weight = weight * valid_mask.float()  # zero out contribution from NaN pixels entirely
+
     loss = weight * (pred - target) ** 2
-    return loss.mean()
+    # Normalize by valid pixel count, not total pixel count - otherwise a
+    # crop that's mostly NaN would misleadingly report a tiny average loss
+    return loss.sum() / valid_mask.float().sum().clamp(min=1.0)
 
 def train_convlstm():
     print("Initializing ConvLSTM Model...")
@@ -156,8 +207,8 @@ def train_convlstm():
     
     optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
     
-    print("Building synthetic dataset (50 sequences of moving blobs)...")
-    X_train, y_train = build_synthetic_dataset(num_seqs=50)
+    print("Building real training dataset from historical sequences...")
+    X_train, y_train = build_real_dataset()
     
     # Use DataLoader for batching
     dataset = torch.utils.data.TensorDataset(X_train, y_train)
@@ -165,10 +216,12 @@ def train_convlstm():
     
     print(f"Training Data Shape: X={X_train.shape}, Y={y_train.shape}")
     
-    print("Running training loop (10 epochs)...")
+    print("Running training loop (15 epochs)...")
     model.train()
     
-    for epoch in range(10):
+    import time
+    for epoch in range(15):
+        epoch_start = time.time()
         epoch_loss = 0.0
         for batch_X, batch_y in dataloader:
             batch_X, batch_y = batch_X.to(device), batch_y.to(device)
@@ -182,17 +235,18 @@ def train_convlstm():
             
             epoch_loss += loss.item()
             
-        print(f"Epoch {epoch+1}/10 - Avg Loss: {epoch_loss / len(dataloader):.4f}")
+        epoch_time = time.time() - epoch_start
+        print(f"Epoch {epoch+1}/15 - Avg Loss: {epoch_loss / len(dataloader):.4f} ({epoch_time:.1f}s)")
         
-    out_path = os.path.join(model_dir, 'convlstm.pt')
+    out_path = os.path.join(model_dir, 'convlstm_real_v1.pt')
     torch.save(model.state_dict(), out_path)
     print(f"ConvLSTM weights saved to {out_path}")
 
-def run_convlstm_inference(num_forecast_frames=12, target_size=None, input_frames=None, out_dir=None):
+def run_convlstm_inference(num_forecast_frames=12, target_size=None, input_frames=None, out_dir=None, model_name='convlstm.pt'):
     # Load model
     base_dir = os.path.dirname(os.path.abspath(__file__))
     dwr_dir = os.path.join(base_dir, '..', 'data', 'dwr_proxy')
-    model_path = os.path.join(base_dir, 'models', 'convlstm.pt')
+    model_path = os.path.join(base_dir, 'models', model_name)
     
     if out_dir is None:
         out_dir = os.path.join(base_dir, '..', 'data', 'nowcast_convlstm')

@@ -162,9 +162,23 @@ def geotiff_to_geojson_polygons(
             data = src.read(1)
             data = np.nan_to_num(data, nan=-999.0)
             transform = src.transform
-            timestamp_str = datetime.datetime.fromtimestamp(
-                os.path.getmtime(filepath), tz=datetime.timezone.utc
-            ).isoformat()
+            
+            import sys
+            sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'nowcast'))
+            try:
+                from timing import get_base_time
+                base_dt, _ = get_base_time(filepath)
+                if base_dt:
+                    timestamp_str = base_dt.replace(tzinfo=datetime.timezone.utc).isoformat()
+                else:
+                    timestamp_str = datetime.datetime.fromtimestamp(
+                        os.path.getmtime(filepath), tz=datetime.timezone.utc
+                    ).isoformat()
+            except Exception:
+                timestamp_str = datetime.datetime.fromtimestamp(
+                    os.path.getmtime(filepath), tz=datetime.timezone.utc
+                ).isoformat()
+            
             
             # Sort thresholds ascending to layer polygons properly
             thresholds.sort(key=lambda x: x[0])
@@ -429,11 +443,11 @@ def get_combined_hazards() -> Dict[str, Any]:
             active_hazard_zones.append(zone_feature)
             all_features.append(zone_feature)
     else:
-        # Fallback representative storm hazard zones centered over Indian subcontinent
+        # Fallback representative storm hazard zones centered near Nagpur (21.0, 79.0) to match radar relocation
         mock_zones = [
-            {"id": "HZ-01", "name": "Delhi-NCR Convective Cluster", "coords": [77.10, 28.70], "sev": "severe", "eta": 25, "dbz": 53},
-            {"id": "HZ-02", "name": "Odisha Coastal Squall Line", "coords": [85.80, 20.30], "sev": "heavy", "eta": 45, "dbz": 46},
-            {"id": "HZ-03", "name": "Deccan Plateau Cell", "coords": [78.48, 17.38], "sev": "moderate", "eta": 65, "dbz": 38}
+            {"id": "HZ-01", "name": "Nagpur Convective Cluster", "coords": [79.10, 21.10], "sev": "severe", "eta": 25, "dbz": 53},
+            {"id": "HZ-02", "name": "Wardha Squall Line", "coords": [78.60, 20.70], "sev": "heavy", "eta": 45, "dbz": 46},
+            {"id": "HZ-03", "name": "Bhandara Cell", "coords": [79.70, 21.20], "sev": "moderate", "eta": 65, "dbz": 38}
         ]
         for z in mock_zones:
             c = z["coords"]
@@ -450,6 +464,7 @@ def get_combined_hazards() -> Dict[str, Any]:
                 "geometry": {"type": "Polygon", "coordinates": poly_coords},
                 "properties": {
                     "hazard_type": "hazard_zone",
+                    "source": "demo_fallback",
                     "zone_id": z["id"],
                     "name": z["name"],
                     "severity": z["sev"],

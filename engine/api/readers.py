@@ -265,9 +265,29 @@ def get_latest_forecast(model: str = "optical_flow") -> Dict[str, Any]:
     for idx, fpath in enumerate(frames_files):
         lead_time = (idx + 1) * 30
         fname = os.path.basename(fpath)
+        
+        # Read true base_time from the GeoTIFF tag if available
+        base_time = None
+        try:
+            import sys
+            sys.path.append(os.path.join(ENGINE_DIR, 'nowcast'))
+            from timing import get_base_time
+            base_dt, _ = get_base_time(fpath)
+            # Ensure it is timezone-aware (UTC)
+            base_time = base_dt.replace(tzinfo=datetime.timezone.utc)
+        except Exception as e:
+            logger.warning(f"Could not read base_time from {fpath}: {e}")
+            
+        # Fallback to mtime if reading base_time failed
+        if base_time is None:
+            mtime = os.path.getmtime(fpath)
+            base_time = datetime.datetime.fromtimestamp(mtime, tz=datetime.timezone.utc)
+            
+        valid_time = base_time + datetime.timedelta(minutes=lead_time)
+        
+        # For 'generated_time', mtime is technically correct (when the file was created on disk)
         mtime = os.path.getmtime(fpath)
-        frame_time = datetime.datetime.fromtimestamp(mtime, tz=datetime.timezone.utc)
-        valid_time = frame_time + datetime.timedelta(minutes=lead_time)
+        generated_time = datetime.datetime.fromtimestamp(mtime, tz=datetime.timezone.utc)
         
         geojson_data = geotiff_to_geojson_polygons(fpath)
         
@@ -275,7 +295,7 @@ def get_latest_forecast(model: str = "optical_flow") -> Dict[str, Any]:
             "frame_index": idx + 1,
             "lead_time_minutes": lead_time,
             "filename": fname,
-            "generated_time": frame_time.isoformat(),
+            "generated_time": generated_time.isoformat(),
             "valid_time": valid_time.isoformat(),
             "polygon_count": len(geojson_data.get("features", [])),
             "geojson": geojson_data

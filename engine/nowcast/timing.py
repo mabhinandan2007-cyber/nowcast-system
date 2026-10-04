@@ -7,8 +7,8 @@ def get_base_time(path):
     try:
         with rasterio.open(path) as src:
             tags = src.tags()
-            if 'scan_time' in tags:
-                iso_time = tags['scan_time']
+            iso_time = tags.get('scan_time') or tags.get('base_time')
+            if iso_time:
                 dt = datetime.datetime.fromisoformat(iso_time.replace('Z', '+00:00')).replace(tzinfo=None)
                 return dt, iso_time
     except Exception:

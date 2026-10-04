@@ -45,11 +45,23 @@ def job_insat():
     except Exception as e:
         logger.error(f"INSAT job failed: {e}", exc_info=True)
 
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'nowcast'))
+try:
+    from optical_flow_nowcast import run_optical_flow_nowcast
+except ImportError:
+    run_optical_flow_nowcast = None
+
 def job_dwr():
     logger.info("--- Starting DWR Proxy job ---")
     try:
         dwr_proxy.fetch_and_process_dwr()
         logger.info("DWR Proxy job completed successfully.")
+        
+        # Trigger Optical Flow Nowcast if available
+        if run_optical_flow_nowcast:
+            logger.info("Triggering Optical Flow Nowcast...")
+            run_optical_flow_nowcast()
+            logger.info("Optical Flow Nowcast completed successfully.")
     except Exception as e:
         logger.error(f"DWR Proxy job failed: {e}", exc_info=True)
 

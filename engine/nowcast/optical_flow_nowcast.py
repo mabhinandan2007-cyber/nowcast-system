@@ -29,6 +29,8 @@ def run_optical_flow_nowcast(num_forecast_frames=12, input_frames=None, out_dir=
         
     if out_dir is None:
         out_dir = OUT_DIR
+        
+    os.makedirs(out_dir, exist_ok=True)
     
     if len(frames) < 2:
         print("Need at least 2 frames for Farneback optical flow.")

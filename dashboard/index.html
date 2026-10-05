@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convective-Scale Nowcasting System | GIS Dashboard</title>
+    <title>NOWCAST.GIS | Severe Convective Weather Workstation</title>
     
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -17,224 +17,373 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="style.css?v=2">
+    <!-- Redesigned Weather Workstation Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
-    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <!-- Subtle Loading Indicator -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;" role="status" aria-live="polite">
         <div class="spinner"></div>
-        <span>Loading forecast...</span>
+        <span id="loadingMessage">Syncing live radar nowcast...</span>
     </div>
     
-    <div id="demoBanner" class="demo-banner" style="display: none;">
-        &#9888; DEMO DATA &mdash; not live radar
+    <!-- Compact Top Demo Banner -->
+    <div id="demoBanner" class="demo-banner" style="display: none;" role="alert">
+        <div class="demo-banner-content">
+            <span class="demo-banner-icon" aria-hidden="true">⚠️</span>
+            <span id="demoBannerText" class="demo-banner-text">Live radar data is temporarily unavailable. Demonstration data is being displayed.</span>
+            <button id="demoRetryBtn" class="demo-retry-btn" title="Retry live radar connection">↻ Reconnect</button>
+        </div>
     </div>
 
-    <!-- Fullscreen Leaflet Map -->
-    <div id="map"></div>
+    <!-- 1. FULLSCREEN WEATHER RADAR MAP (Dominates 75-80% of Viewport) -->
+    <main id="map" aria-label="Interactive Weather Radar Map"></main>
 
-    <!-- Top Navigation Bar -->
-    <nav class="top-nav">
+    <!-- 2. COMPACT SINGLE-BAR TOP HEADER (Height ~44px) -->
+    <header class="top-nav">
+        <!-- Left: Branding -->
         <div class="nav-left">
-            <div class="glass-pill">
-                <div class="system-title">
-                    <span class="radar-icon">📡</span>
-                    <span>NOWCAST<span style="color:var(--accent-blue);">.GIS</span></span>
-                </div>
-                <span class="badge-tag">CONVECTIVE-SCALE</span>
+            <div class="brand-group">
+                <span class="radar-pulse-icon" aria-hidden="true">📡</span>
+                <span class="brand-title">NOWCAST<span class="brand-accent">.GIS</span></span>
+                <span class="brand-divider">|</span>
+                <span class="brand-tag">CONVECTIVE WEATHER</span>
             </div>
 
-            <!-- Side Panel Floating Trigger (when collapsed) -->
-            <button id="sidePanelToggleBtn" class="panel-toggle-btn" style="display:none;" title="Show Active Hazards">
-                <span>⚠️</span>
-                <span>Active Hazards</span>
+            <!-- Floating Sidebar Restore Button (visible when sidebar is closed) -->
+            <button id="sidePanelToggleBtn" class="mini-floating-trigger" style="display:none;" title="Open Active Hazards panel" aria-expanded="false">
+                <span aria-hidden="true">⚠️</span>
+                <span>Hazards</span>
+                <span id="toggleHazardCountBadge" class="mini-count-pill">6</span>
             </button>
         </div>
 
+        <!-- Center: Status & Universal Clocks -->
         <div class="nav-center">
-            <!-- Data Freshness & Honesty Pill -->
-            <div id="statusPill" class="glass-pill status-badge" title="Click for data source telemetry and freshness">
-                <div id="statusDot" class="status-dot pulse"></div>
-                <span id="statusText" style="font-weight:600; font-size:11px; letter-spacing:0.02em;">SYSTEM OPERATIONAL</span>
-                <span style="color:var(--text-muted); font-size:11px;">ℹ️</span>
+            <div id="statusPill" class="status-chip" role="button" tabindex="0" title="Click for data source telemetry and freshness">
+                <div id="statusDot" class="status-pulse-dot" aria-hidden="true"></div>
+                <span id="statusText">LIVE RADAR</span>
+                <span class="status-info-glyph" aria-hidden="true">ℹ️</span>
             </div>
 
-            <!-- Clocks -->
-            <div class="glass-pill clock-display">
+            <div class="nav-clock" aria-label="UTC and IST clocks">
                 <span id="utcClock">--:--:-- UTC</span>
-                <span style="color:var(--panel-border);">|</span>
-                <span id="istClock" style="color:var(--text-primary); font-weight:600;">--:--:-- IST</span>
+                <span class="clock-sep">•</span>
+                <span id="istClock" class="clock-ist">--:--:-- IST</span>
             </div>
         </div>
 
+        <!-- Right: Mode Toggle (Live vs Replay) -->
         <div class="nav-right">
-            <!-- Mode Switcher (Live vs Replay/Demo) -->
-            <div class="mode-toggle" title="Switch between live API server and offline demo replay">
-                <button id="modeLiveBtn" class="mode-btn active">Live Stream</button>
-                <button id="modeReplayBtn" class="mode-btn">Replay Demo</button>
+            <div class="mode-toggle-group" role="group" aria-label="Data Source Mode">
+                <button id="modeLiveBtn" class="mode-toggle-btn active" title="Live Doppler radar feed">
+                    <span class="mode-bullet">●</span> Live
+                </button>
+                <button id="modeReplayBtn" class="mode-toggle-btn" title="Offline demonstration replay">
+                    <span>📼</span> Replay
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Side Panel: Active Hazard Alert Zones with Live Countdown Clocks -->
-    <aside id="sidePanel" class="side-panel">
+    <!-- 3. COMPACT FLOATING KPI HUD STRIP (~44px tall, visually dominant values) -->
+    <section class="summary-strip" id="summaryStrip" aria-label="Weather Nowcast KPIs">
+        <div class="summary-card" id="cardActiveHazards" title="Active convective hazard storm clusters">
+            <div class="summary-card-icon icon-hazard">⚠️</div>
+            <div class="summary-card-body">
+                <span class="summary-card-label">ACTIVE HAZARDS</span>
+                <div class="summary-card-row">
+                    <span class="summary-card-value" id="summaryActiveVal">--</span>
+                    <span class="summary-card-sub" id="summaryActiveSub">Monitored Sectors</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-card high-risk-card" id="cardHighRisk" title="Severe and heavy convective warnings">
+            <div class="summary-card-icon icon-severe">🚨</div>
+            <div class="summary-card-body">
+                <span class="summary-card-label">HIGH RISK</span>
+                <div class="summary-card-row">
+                    <span class="summary-card-value severe-val" id="summaryHighRiskVal">--</span>
+                    <span class="summary-card-sub" id="summaryHighRiskSub">Immediate Threat</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-card" id="cardLastScan" title="Latest Doppler radar sweep time">
+            <div class="summary-card-icon icon-scan">🛰️</div>
+            <div class="summary-card-body">
+                <span class="summary-card-label">LAST RADAR SCAN</span>
+                <div class="summary-card-row">
+                    <span class="summary-card-value" id="summaryLastScanVal">--:--</span>
+                    <span class="summary-card-sub" id="summaryLastScanAge">Checking...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-card" id="cardModel" title="Active nowcasting prediction model">
+            <div class="summary-card-icon icon-model">🌪️</div>
+            <div class="summary-card-body">
+                <span class="summary-card-label">PREDICTION MODEL</span>
+                <div class="summary-card-row">
+                    <span class="summary-card-value" id="summaryModelVal">Optical Flow</span>
+                    <span class="summary-card-sub" id="summaryModelSub">6h Horizon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COMPACT FLOATING ACTIVE HAZARDS DOCK (Width ~280px, Non-intrusive) -->
+    <aside id="sidePanel" class="side-panel" aria-label="Active hazard alerts">
         <div class="panel-header">
-            <div class="panel-title">
-                <span>⚠️</span>
-                <span>Active Hazard Zones</span>
-                <span id="alertCount" class="alert-counter">6 Active</span>
+            <div class="panel-title-group">
+                <div class="panel-heading">
+                    <span class="alert-icon" aria-hidden="true">⚠️</span>
+                    <span class="panel-title-text">ACTIVE HAZARDS</span>
+                    <span id="alertCount" class="alert-count-pill">6 Active</span>
+                </div>
             </div>
-            <button id="closeSidePanelBtn" class="panel-close-btn" title="Collapse sidebar">✕</button>
+            <button id="closeSidePanelBtn" class="panel-collapse-btn" title="Minimize hazard panel" aria-label="Minimize sidebar">◀</button>
         </div>
-        <div id="alertList" class="panel-body">
-            <!-- Dynamic Hazard Zone Cards inserted here -->
+
+        <!-- Filter Tabs -->
+        <div class="panel-filter-row" role="tablist" aria-label="Filter by severity">
+            <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
+                All (<span id="filterCountAll">0</span>)
+            </button>
+            <button class="filter-tab tab-high" data-filter="high" role="tab" aria-selected="false">
+                🔴 High (<span id="filterCountHigh">0</span>)
+            </button>
+            <button class="filter-tab tab-mod" data-filter="moderate" role="tab" aria-selected="false">
+                🟢 Mod (<span id="filterCountMod">0</span>)
+            </button>
+        </div>
+
+        <!-- Scrollable List of Compact Hazard Cards -->
+        <div id="alertList" class="panel-cards-scroll" role="region" aria-live="polite">
+            <!-- Dynamically populated -->
         </div>
     </aside>
 
-    <!-- Top-Right Layer Controls & dBZ Color Ramp Legend -->
-    <aside class="right-controls">
-        <div class="control-card">
-            <div class="control-card-title">Map Layers</div>
-            <label class="layer-toggle">
-                <div class="layer-label">
-                    <div class="layer-indicator" style="background:#f59e0b;"></div>
-                    <span>Radar Reflectivity</span>
-                </div>
-                <input type="checkbox" id="toggleRadar" checked>
-            </label>
-            <label class="layer-toggle">
-                <div class="layer-label">
-                    <div class="layer-indicator" style="background:#38bdf8;"></div>
-                    <span>Convective Initiation (CI)</span>
-                </div>
-                <input type="checkbox" id="toggleCi" checked>
-            </label>
-            <label class="layer-toggle">
-                <div class="layer-label">
-                    <div class="layer-indicator" style="background:#fbbf24;"></div>
-                    <span>Lightning Strikes</span>
-                </div>
-                <input type="checkbox" id="toggleLightning" checked>
-            </label>
-            <label class="layer-toggle">
-                <div class="layer-label">
-                    <div class="layer-indicator" style="background:#f43f5e;"></div>
-                    <span>Warning Alert Polygons</span>
-                </div>
-                <input type="checkbox" id="toggleZones" checked>
-            </label>
-        </div>
+    <!-- 5. COMPACT FLOATING MAP CONTROLS & LEGEND (Top Right, ~190px wide) -->
+    <aside class="right-controls" aria-label="Map layers and reflectivity legend">
+        <div class="compact-control-panel">
+            <div class="control-panel-title">
+                <span>MAP LAYERS</span>
+            </div>
+            <div class="layer-toggle-list">
+                <label class="compact-toggle-item" title="Toggle Doppler weather radar reflectivity polygons">
+                    <span class="toggle-dot" style="background:#f59e0b;"></span>
+                    <span class="toggle-name">Radar Echoes</span>
+                    <input type="checkbox" id="toggleRadar" checked>
+                    <span class="micro-switch"></span>
+                </label>
+                <label class="compact-toggle-item" title="Toggle convective initiation cooling points">
+                    <span class="toggle-dot" style="background:#38bdf8;"></span>
+                    <span class="toggle-name">Convective Init</span>
+                    <input type="checkbox" id="toggleCi" checked>
+                    <span class="micro-switch"></span>
+                </label>
+                <label class="compact-toggle-item" title="Toggle lightning strike events">
+                    <span class="toggle-dot" style="background:#fbbf24;"></span>
+                    <span class="toggle-name">Lightning</span>
+                    <input type="checkbox" id="toggleLightning" checked>
+                    <span class="micro-switch"></span>
+                </label>
+                <label class="compact-toggle-item" title="Toggle active storm alert boundaries">
+                    <span class="toggle-dot" style="background:#f43f5e;"></span>
+                    <span class="toggle-name">Alert Polygons</span>
+                    <input type="checkbox" id="toggleZones" checked>
+                    <span class="micro-switch"></span>
+                </label>
+            </div>
 
-        <!-- dBZ Radar Scale Legend -->
-        <div class="control-card">
-            <div class="control-card-title">Reflectivity Intensity (dBZ)</div>
-            <div class="legend-bar"></div>
-            <div class="legend-labels">
-                <span>20 dBZ</span>
-                <span>30</span>
-                <span>40</span>
-                <span>50</span>
-                <span>65+</span>
+            <!-- Slim dBZ Color Bar -->
+            <div class="legend-section">
+                <div class="legend-title-row">
+                    <span>INTENSITY</span>
+                    <span class="legend-unit">dBZ</span>
+                </div>
+                <div class="legend-bar-slim"></div>
+                <div class="legend-ticks">
+                    <span>20</span>
+                    <span>30</span>
+                    <span>40</span>
+                    <span>50</span>
+                    <span>65+</span>
+                </div>
             </div>
         </div>
     </aside>
 
-    <!-- Bottom Timeline Scrubber: 0-6 Hour Forecast Horizon -->
-    <footer class="timeline-container">
-        <div class="timeline-header">
-            <div class="timeline-controls">
-                <button id="prevBtn" class="timeline-btn" title="Previous 30m step">⏮️ Step</button>
-                <button id="playBtn" class="timeline-btn play-btn" title="Animate nowcast advection">▶️ Play</button>
-                <button id="nextBtn" class="timeline-btn" title="Next 30m step">Step ⏭️</button>
+    <!-- 6. SLIM FLOATING TIMELINE SCRUBBER DOCK (Height ~50px) -->
+    <footer class="timeline-container" aria-label="Forecast timeline controller">
+        <div class="timeline-compact-bar">
+            <!-- Navigation buttons -->
+            <div class="timeline-btn-group">
+                <button id="prevBtn" class="timeline-step-btn" title="Step back 30 minutes">⏮️ -30m</button>
+                <button id="playBtn" class="timeline-play-btn" title="Play animated advection nowcast">
+                    <span class="play-icon">▶</span> <span class="play-text">PLAY</span>
+                </button>
+                <button id="nextBtn" class="timeline-step-btn" title="Step forward 30 minutes">+30m ⏭️</button>
             </div>
-            <div class="timeline-info">
-                <span id="leadTimeBadge" class="lead-time-badge">T+0 (Now)</span>
-                <span id="validTimeLabel" class="valid-time-label">Current Radar & Satellite Analysis</span>
-            </div>
-        </div>
 
-        <!-- 13 Time Capsules (T+0 to T+360m) -->
-        <div id="timelineTrack" class="timeline-track">
-            <div class="time-step active" data-step="0">
-                <div class="step-lead">T+0</div>
-                <div class="step-time">Now</div>
+            <!-- Timeline Scrubber Steps (T+0 to T+360m) -->
+            <div id="timelineTrack" class="timeline-capsule-track" role="radiogroup" aria-label="Forecast lead time">
+                <button class="time-capsule active" data-step="0" role="radio" aria-checked="true" aria-label="Now">
+                    <span class="cap-lead">NOW</span>
+                </button>
+                <button class="time-capsule" data-step="1" role="radio" aria-checked="false" aria-label="+30m">
+                    <span class="cap-lead">+30m</span>
+                </button>
+                <button class="time-capsule" data-step="2" role="radio" aria-checked="false" aria-label="+1h">
+                    <span class="cap-lead">+1h</span>
+                </button>
+                <button class="time-capsule" data-step="3" role="radio" aria-checked="false" aria-label="+1.5h">
+                    <span class="cap-lead">+1.5h</span>
+                </button>
+                <button class="time-capsule" data-step="4" role="radio" aria-checked="false" aria-label="+2h">
+                    <span class="cap-lead">+2h</span>
+                </button>
+                <button class="time-capsule" data-step="5" role="radio" aria-checked="false" aria-label="+2.5h">
+                    <span class="cap-lead">+2.5h</span>
+                </button>
+                <button class="time-capsule" data-step="6" role="radio" aria-checked="false" aria-label="+3h">
+                    <span class="cap-lead">+3h</span>
+                </button>
+                <button class="time-capsule" data-step="7" role="radio" aria-checked="false" aria-label="+3.5h">
+                    <span class="cap-lead">+3.5h</span>
+                </button>
+                <button class="time-capsule" data-step="8" role="radio" aria-checked="false" aria-label="+4h">
+                    <span class="cap-lead">+4h</span>
+                </button>
+                <button class="time-capsule" data-step="9" role="radio" aria-checked="false" aria-label="+4.5h">
+                    <span class="cap-lead">+4.5h</span>
+                </button>
+                <button class="time-capsule" data-step="10" role="radio" aria-checked="false" aria-label="+5h">
+                    <span class="cap-lead">+5h</span>
+                </button>
+                <button class="time-capsule" data-step="11" role="radio" aria-checked="false" aria-label="+5.5h">
+                    <span class="cap-lead">+5.5h</span>
+                </button>
+                <button class="time-capsule" data-step="12" role="radio" aria-checked="false" aria-label="+6h">
+                    <span class="cap-lead">+6h</span>
+                </button>
             </div>
-            <div class="time-step" data-step="1">
-                <div class="step-lead">+30m</div>
-                <div class="step-time">0.5h</div>
-            </div>
-            <div class="time-step" data-step="2">
-                <div class="step-lead">+60m</div>
-                <div class="step-time">1.0h</div>
-            </div>
-            <div class="time-step" data-step="3">
-                <div class="step-lead">+90m</div>
-                <div class="step-time">1.5h</div>
-            </div>
-            <div class="time-step" data-step="4">
-                <div class="step-lead">+120m</div>
-                <div class="step-time">2.0h</div>
-            </div>
-            <div class="time-step" data-step="5">
-                <div class="step-lead">+150m</div>
-                <div class="step-time">2.5h</div>
-            </div>
-            <div class="time-step" data-step="6">
-                <div class="step-lead">+180m</div>
-                <div class="step-time">3.0h</div>
-            </div>
-            <div class="time-step" data-step="7">
-                <div class="step-lead">+210m</div>
-                <div class="step-time">3.5h</div>
-            </div>
-            <div class="time-step" data-step="8">
-                <div class="step-lead">+240m</div>
-                <div class="step-time">4.0h</div>
-            </div>
-            <div class="time-step" data-step="9">
-                <div class="step-lead">+270m</div>
-                <div class="step-time">4.5h</div>
-            </div>
-            <div class="time-step" data-step="10">
-                <div class="step-lead">+300m</div>
-                <div class="step-time">5.0h</div>
-            </div>
-            <div class="time-step" data-step="11">
-                <div class="step-lead">+330m</div>
-                <div class="step-time">5.5h</div>
-            </div>
-            <div class="time-step" data-step="12">
-                <div class="step-lead">+360m</div>
-                <div class="step-time">6.0h</div>
+
+            <!-- Lead time status info -->
+            <div class="timeline-status-info">
+                <span id="leadTimeBadge" class="lead-badge">T+0 (Now)</span>
+                <span id="timelineReplayBadge" class="replay-badge" style="display:none;">DEMO</span>
+                <span id="validTimeLabel" class="valid-label">Radar Analysis</span>
             </div>
         </div>
     </footer>
 
-    <!-- Status & Data Honesty Modal Drawer -->
-    <div id="statusModal" class="modal-overlay">
-        <div class="status-modal">
-            <div class="modal-header">
-                <div class="modal-title">Data Ingestion Telemetry & Source Honesty</div>
-                <button id="closeStatusModalBtn" class="panel-close-btn">✕</button>
+    <!-- 7. HAZARD DETAIL INSPECTION MODAL / DRAWER -->
+    <div id="hazardDetailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="hazardDetailTitle">
+        <div class="hazard-detail-card">
+            <div class="detail-header">
+                <div class="detail-title-group">
+                    <span id="detailSeverityBadge" class="severity-badge-prominent severe">🔴 HIGH RISK</span>
+                    <h3 id="hazardDetailTitle" class="detail-title">Zone HZ-01</h3>
+                    <span id="detailDemoBadge" class="demo-badge-tag" style="display:none;">DEMO</span>
+                </div>
+                <button id="closeHazardDetailBtn" class="detail-close-btn" title="Close details" aria-label="Close details">✕</button>
             </div>
-            <p style="font-size:12px; color:var(--text-secondary); line-height:1.5;">
-                This system tracks live radar echoes, satellite thermal cooling, and machine learning advection nowcasts. 
-                Below is the verified status and origin of each pipeline data feed:
-            </p>
-            <div id="sourceGrid" class="source-grid">
-                <!-- Dynamically populated from /status -->
+            
+            <div class="detail-body">
+                <!-- Large ETA Alert Box -->
+                <div class="detail-eta-banner">
+                    <div class="eta-left">
+                        <span class="eta-icon" aria-hidden="true">⏱️</span>
+                        <div>
+                            <div class="eta-title">ESTIMATED STORM ARRIVAL</div>
+                            <div id="detailEtaValue" class="eta-countdown">-- mins</div>
+                        </div>
+                    </div>
+                    <span class="countdown-pulse-tag">ACTIVE COUNTDOWN</span>
+                </div>
+
+                <!-- 4 Metrics Chips -->
+                <div class="detail-grid">
+                    <div class="detail-stat">
+                        <span class="stat-name">Peak Echo</span>
+                        <span id="detailMaxDbz" class="stat-num">-- dBZ</span>
+                        <span class="stat-desc">Reflectivity Core</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="stat-name">Motion Vector</span>
+                        <span id="detailSpeedVector" class="stat-num">-- km/h (--)</span>
+                        <span class="stat-desc">Advection Trajectory</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="stat-name">Lightning Density</span>
+                        <span id="detailLightning" class="stat-num">--</span>
+                        <span class="stat-desc">Strike Rate</span>
+                    </div>
+                    <div class="detail-stat">
+                        <span class="stat-name">Coordinates</span>
+                        <span id="detailCoordinates" class="stat-num">--</span>
+                        <span class="stat-desc">Centroid Lat/Lon</span>
+                    </div>
+                </div>
+
+                <!-- Operational Meteorological Narrative -->
+                <div class="detail-summary-block">
+                    <h4 class="summary-heading">Operational Nowcast Assessment</h4>
+                    <p id="detailSummaryText" class="summary-paragraph">Analyzing convective cell trajectory and atmospheric parameters...</p>
+                </div>
+
+                <!-- Collapsible Technical Pipeline Metadata -->
+                <details class="detail-accordion">
+                    <summary class="accordion-header">
+                        <span>Technical Telemetry & Sensor Ingestion</span>
+                        <span class="accordion-arrow" aria-hidden="true">▾</span>
+                    </summary>
+                    <div class="accordion-content" id="detailTechnicalContent">
+                        <div class="tech-row"><span>Source Feed:</span> <strong id="techSource">Doppler Radar Synthesis</strong></div>
+                        <div class="tech-row"><span>Bounding Box:</span> <code id="techBbox">[--, --, --, --]</code></div>
+                        <div class="tech-row"><span>Centroid (Lon, Lat):</span> <code id="techCentroid">[--, --]</code></div>
+                        <div class="tech-row"><span>Prediction Model:</span> <strong>Optical Flow (6-Hour Horizon)</strong></div>
+                        <div class="tech-row"><span>Pipeline State:</span> <strong id="techStatus">Operational Pipeline Detection</strong></div>
+                    </div>
+                </details>
+            </div>
+
+            <div class="detail-footer">
+                <button id="focusHazardOnMapBtn" class="detail-action-primary">
+                    <span>🎯</span> Center on Map
+                </button>
+                <button id="dismissDetailBtn" class="detail-action-secondary">Dismiss</button>
             </div>
         </div>
     </div>
 
-    <!-- Toast Notification Container -->
-    <div id="toastContainer" class="toast-container"></div>
+    <!-- 8. STATUS & TELEMETRY MODAL -->
+    <div id="statusModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle">
+        <div class="status-modal-card">
+            <div class="modal-top">
+                <div class="modal-title" id="statusModalTitle">Pipeline Telemetry & Feed Honesty</div>
+                <button id="closeStatusModalBtn" class="detail-close-btn" aria-label="Close modal">✕</button>
+            </div>
+            <p class="modal-subtext">
+                Real-time status of all radar, satellite, lightning, and advection model feeds:
+            </p>
+            <div id="sourceGrid" class="source-list">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
 
-    <!-- Scripts -->
+    <!-- Notification Toast Container -->
+    <div id="toastContainer" class="toast-container" role="region" aria-label="Notifications" aria-live="polite"></div>
+
+    <!-- JavaScript Dependencies -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="replay_data.js"></script>
-    <script src="api.js?v=2"></script>
-    <script src="app.js?v=2"></script>
+    <script src="api.js?v=6"></script>
+    <script src="app.js?v=6"></script>
 </body>
 </html>

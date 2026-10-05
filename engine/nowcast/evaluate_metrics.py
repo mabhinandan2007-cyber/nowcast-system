@@ -13,13 +13,13 @@ from optical_flow_nowcast import run_optical_flow_nowcast
 from convlstm_model import run_convlstm_inference
 from timing import get_base_time
 
-def calculate_metrics(pred, true, threshold):
-    pred_bin = (pred >= threshold)
-    true_bin = (true >= threshold)
+def calculate_metrics(pred, true, threshold, valid_mask):
+    pred_bin = (pred >= threshold) & valid_mask
+    true_bin = (true >= threshold) & valid_mask
     
     hits = np.sum(pred_bin & true_bin)
-    misses = np.sum(~pred_bin & true_bin)
-    false_alarms = np.sum(pred_bin & ~true_bin)
+    misses = np.sum(~pred_bin & true_bin & valid_mask)
+    false_alarms = np.sum(pred_bin & ~true_bin & valid_mask)
     
     pod = hits / (hits + misses) if (hits + misses) > 0 else np.nan
     far = false_alarms / (hits + false_alarms) if (hits + false_alarms) > 0 else np.nan
@@ -111,10 +111,13 @@ def evaluate():
                 with rasterio.open(conv_fcsts[j]) as src:
                     conv_data = src.read(1)
                     
+                valid_mask = ~np.isnan(true_data) & ~np.isnan(opt_data) & ~np.isnan(conv_data) & ~np.isnan(pers_data)
+                valid_fraction = np.sum(valid_mask) / true_data.size if true_data.size > 0 else 0.0
+                
                 for thresh in thresholds:
-                    pod_o, far_o, csi_o = calculate_metrics(opt_data, true_data, thresh)
-                    pod_c, far_c, csi_c = calculate_metrics(conv_data, true_data, thresh)
-                    pod_p, far_p, csi_p = calculate_metrics(pers_data, true_data, thresh)
+                    pod_o, far_o, csi_o = calculate_metrics(opt_data, true_data, thresh, valid_mask)
+                    pod_c, far_c, csi_c = calculate_metrics(conv_data, true_data, thresh, valid_mask)
+                    pod_p, far_p, csi_p = calculate_metrics(pers_data, true_data, thresh, valid_mask)
                     
                     results.append({
                         "station_date": station_date,
@@ -122,7 +125,7 @@ def evaluate():
                         "lead_time": lead_min,
                         "threshold": thresh,
                         "method": "Optical Flow",
-                        "POD": pod_o, "FAR": far_o, "CSI": csi_o
+                        "POD": pod_o, "FAR": far_o, "CSI": csi_o, "valid_pixel_fraction": valid_fraction
                     })
                     results.append({
                         "station_date": station_date,
@@ -130,7 +133,7 @@ def evaluate():
                         "lead_time": lead_min,
                         "threshold": thresh,
                         "method": "ConvLSTM",
-                        "POD": pod_c, "FAR": far_c, "CSI": csi_c
+                        "POD": pod_c, "FAR": far_c, "CSI": csi_c, "valid_pixel_fraction": valid_fraction
                     })
                     results.append({
                         "station_date": station_date,
@@ -138,7 +141,7 @@ def evaluate():
                         "lead_time": lead_min,
                         "threshold": thresh,
                         "method": "Persistence",
-                        "POD": pod_p, "FAR": far_p, "CSI": csi_p
+                        "POD": pod_p, "FAR": far_p, "CSI": csi_p, "valid_pixel_fraction": valid_fraction
                     })
             
             # Clean up generated forecast files to save space

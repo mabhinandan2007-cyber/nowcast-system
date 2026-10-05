@@ -342,9 +342,11 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = `zone-card ${props.severity}`;
             card.setAttribute('data-zone-id', zoneId);
 
+            const demoBadge = (props.source === 'demo_fallback') ? `<span class="demo-badge">DEMO</span>` : '';
+
             card.innerHTML = `
                 <div class="card-top">
-                    <span class="zone-id">${zoneId}</span>
+                    <span class="zone-id">${zoneId}${demoBadge}</span>
                     <span class="severity-pill ${props.severity}">${props.severity}</span>
                 </div>
                 <div class="zone-name">${props.name}</div>
@@ -459,6 +461,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load All Data from API
     async function loadData() {
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const demoBanner = document.getElementById('demoBanner');
+        if (loadingOverlay) loadingOverlay.style.display = 'flex';
         try {
             // 1. Status
             const status = await ApiService.getStatus();
@@ -489,7 +494,12 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeStep(state.timeStep);
         } catch (err) {
             console.error('Error loading dashboard data:', err);
-            showToast('Connection to nowcasting API failed. Replay data loaded.', '⚠️');
+            showToast('Connection to nowcasting API failed. Replay data loaded.', 'X');
+        } finally {
+            if (loadingOverlay) loadingOverlay.style.display = 'none';
+            if (demoBanner) {
+                demoBanner.style.display = (ApiService.isReplayMode() || ApiService.isFallbackActive()) ? 'block' : 'none';
+            }
         }
     }
 

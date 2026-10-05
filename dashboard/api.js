@@ -13,6 +13,7 @@ const ApiService = (function () {
         : `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/live`;
 
     let replayMode = false;
+    let apiErrorFallbackActive = false;
     let ws = null;
     let wsReconnectTimeout = null;
     let pingInterval = null;
@@ -20,6 +21,10 @@ const ApiService = (function () {
     return {
         isReplayMode() {
             return replayMode;
+        },
+        
+        isFallbackActive() {
+            return apiErrorFallbackActive;
         },
 
         setReplayMode(enabled) {
@@ -37,9 +42,11 @@ const ApiService = (function () {
             try {
                 const res = await fetch(`${apiHost}/status`);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                apiErrorFallbackActive = false;
                 return await res.json();
             } catch (err) {
                 console.warn('[API] Failed to fetch /status, falling back to replay data:', err.message);
+                apiErrorFallbackActive = true;
                 return window.REPLAY_DATA ? window.REPLAY_DATA.status : null;
             }
         },
@@ -72,9 +79,11 @@ const ApiService = (function () {
                 
                 const res = await fetch(`${apiHost}/hazards${query}`);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                apiErrorFallbackActive = false;
                 return await res.json();
             } catch (err) {
                 console.warn('[API] Failed to fetch /hazards, falling back to replay snapshot:', err.message);
+                apiErrorFallbackActive = true;
                 return window.REPLAY_DATA ? window.REPLAY_DATA.hazards : { type: 'FeatureCollection', features: [] };
             }
         },
@@ -94,9 +103,11 @@ const ApiService = (function () {
                 if (leadTime !== null) params.append('lead_time', leadTime);
                 const res = await fetch(`${apiHost}/forecast?${params.toString()}`);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                apiErrorFallbackActive = false;
                 return await res.json();
             } catch (err) {
                 console.warn('[API] Failed to fetch /forecast, falling back to replay snapshot:', err.message);
+                apiErrorFallbackActive = true;
                 return window.REPLAY_DATA ? window.REPLAY_DATA.forecast : { status: 'not_yet_available', frames: [] };
             }
         },

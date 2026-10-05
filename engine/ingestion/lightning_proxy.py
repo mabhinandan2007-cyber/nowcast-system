@@ -34,6 +34,14 @@ def generate_lightning_geojson():
     
     strikes = []
     
+    dwr_bounds = None
+    if dwr_file:
+        try:
+            with rasterio.open(dwr_file) as src:
+                dwr_bounds = src.bounds
+        except:
+            pass
+
     # Try using DWR first for high reflectivity correlation
     if dwr_file:
         try:
@@ -71,19 +79,30 @@ def generate_lightning_geojson():
                 y_coords, x_coords = np.where(insat_data < 230)
                 
                 if len(y_coords) > 0:
-                    num_strikes = min(len(y_coords) // 20, 300) 
-                    indices = np.random.choice(len(y_coords), num_strikes, replace=False)
-                    for idx in indices:
+                    valid_coords = []
+                    for idx in range(len(y_coords)):
                         lon, lat = rasterio.transform.xy(transform, y_coords[idx], x_coords[idx])
-                        strikes.append({
-                            "type": "Feature",
-                            "geometry": {"type": "Point", "coordinates": [lon, lat]},
-                            "properties": {
-                                "timestamp": datetime.datetime.utcnow().isoformat(),
-                                "intensity": float(np.random.uniform(5, 50)),
-                                "source": "synthetic_insat_correlated"
-                            }
-                        })
+                        if dwr_bounds:
+                            if lon < dwr_bounds.left or lon > dwr_bounds.right or lat < dwr_bounds.bottom or lat > dwr_bounds.top:
+                                continue
+                        valid_coords.append((lon, lat))
+                    
+                    if valid_coords:
+                        num_strikes = min(len(valid_coords) // 20, 300)
+                        
+                        import random
+                        sampled_coords = random.sample(valid_coords, num_strikes)
+                        
+                        for lon, lat in sampled_coords:
+                            strikes.append({
+                                "type": "Feature",
+                                "geometry": {"type": "Point", "coordinates": [lon, lat]},
+                                "properties": {
+                                    "timestamp": datetime.datetime.utcnow().isoformat(),
+                                    "intensity": float(np.random.uniform(5, 50)),
+                                    "source": "synthetic_insat_correlated"
+                                }
+                            })
         except Exception as e:
             logger.error(f"Error reading INSAT for lightning proxy: {e}")
             

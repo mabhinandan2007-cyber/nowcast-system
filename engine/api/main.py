@@ -131,7 +131,6 @@ if os.path.exists(DASHBOARD_DIR):
 def get_root():
     """Service index and endpoint directory."""
     return RedirectResponse(url="/dashboard/index.html")
-    }
 
 
 @app.get("/status")

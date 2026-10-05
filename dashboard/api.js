@@ -18,7 +18,25 @@ const ApiService = (function () {
     let wsReconnectTimeout = null;
     let pingInterval = null;
 
+    function tagDemoHazards(hazardCollection) {
+        if (!hazardCollection || !hazardCollection.features) return hazardCollection;
+        return {
+            ...hazardCollection,
+            features: hazardCollection.features.map(f => ({
+                ...f,
+                properties: {
+                    ...f.properties,
+                    source: 'demo_fallback'
+                }
+            }))
+        };
+    }
+
     return {
+        getApiHost() {
+            return apiHost;
+        },
+
         isReplayMode() {
             return replayMode;
         },
@@ -31,7 +49,11 @@ const ApiService = (function () {
             replayMode = enabled;
             console.log(`[API] Replay Mode ${replayMode ? 'ENABLED (Offline Demo)' : 'DISABLED (Live API)'}`);
             if (replayMode && ws) {
-                ws.close();
+                try {
+                    ws.close();
+                } catch (e) {
+                    // Ignore close exception
+                }
             }
         },
 
@@ -45,7 +67,7 @@ const ApiService = (function () {
                 apiErrorFallbackActive = false;
                 return await res.json();
             } catch (err) {
-                console.warn('[API] Failed to fetch /status, falling back to replay data:', err.message);
+                console.warn('[API] Unable to reach live /status, switching to demonstration snapshot.');
                 apiErrorFallbackActive = true;
                 return window.REPLAY_DATA ? window.REPLAY_DATA.status : null;
             }
@@ -54,7 +76,8 @@ const ApiService = (function () {
         async getHazards(severity = null, hazardType = null) {
             if (replayMode) {
                 if (!window.REPLAY_DATA) return { type: 'FeatureCollection', features: [] };
-                let features = [...window.REPLAY_DATA.hazards.features];
+                const tagged = tagDemoHazards(window.REPLAY_DATA.hazards);
+                let features = [...tagged.features];
                 if (severity) {
                     features = features.filter(f => f.properties?.severity?.toLowerCase() === severity.toLowerCase());
                 }
@@ -62,10 +85,10 @@ const ApiService = (function () {
                     features = features.filter(f => f.properties?.hazard_type?.toLowerCase() === hazardType.toLowerCase());
                 }
                 return {
-                    ...window.REPLAY_DATA.hazards,
+                    ...tagged,
                     features,
                     metadata: {
-                        ...window.REPLAY_DATA.hazards.metadata,
+                        ...tagged.metadata,
                         filtered_count: features.length
                     }
                 };
@@ -82,9 +105,27 @@ const ApiService = (function () {
                 apiErrorFallbackActive = false;
                 return await res.json();
             } catch (err) {
-                console.warn('[API] Failed to fetch /hazards, falling back to replay snapshot:', err.message);
+                console.warn('[API] Live /hazards request failed, utilizing demonstration snapshot.');
                 apiErrorFallbackActive = true;
-                return window.REPLAY_DATA ? window.REPLAY_DATA.hazards : { type: 'FeatureCollection', features: [] };
+                if (window.REPLAY_DATA && window.REPLAY_DATA.hazards) {
+                    const tagged = tagDemoHazards(window.REPLAY_DATA.hazards);
+                    let features = [...tagged.features];
+                    if (severity) {
+                        features = features.filter(f => f.properties?.severity?.toLowerCase() === severity.toLowerCase());
+                    }
+                    if (hazardType) {
+                        features = features.filter(f => f.properties?.hazard_type?.toLowerCase() === hazardType.toLowerCase());
+                    }
+                    return {
+                        ...tagged,
+                        features,
+                        metadata: {
+                            ...tagged.metadata,
+                            filtered_count: features.length
+                        }
+                    };
+                }
+                return { type: 'FeatureCollection', features: [] };
             }
         },
 
@@ -104,9 +145,18 @@ const ApiService = (function () {
                 const res = await fetch(`${apiHost}/forecast?${params.toString()}`);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 apiErrorFallbackActive = false;
-                return await res.json();
+                const data = await res.json();
+                
+                // If live forecast has no frames yet, provide replay forecast frames as fallback for interactive scrubber
+                if ((!data.frames || data.frames.length === 0) && window.REPLAY_DATA && window.REPLAY_DATA.forecast) {
+                    return {
+                        ...window.REPLAY_DATA.forecast,
+                        is_demo_frames: true
+                    };
+                }
+                return data;
             } catch (err) {
-                console.warn('[API] Failed to fetch /forecast, falling back to replay snapshot:', err.message);
+                console.warn('[API] Unable to load live forecast, using demonstration frames.');
                 apiErrorFallbackActive = true;
                 return window.REPLAY_DATA ? window.REPLAY_DATA.forecast : { status: 'not_yet_available', frames: [] };
             }
@@ -154,11 +204,13 @@ const ApiService = (function () {
                     };
 
                     ws.onerror = (err) => {
-                        console.warn('[WS] Stream error:', err);
-                        ws.close();
+                        console.warn('[WS] Stream communication error.');
+                        try {
+                            ws.close();
+                        } catch (e) {}
                     };
                 } catch (e) {
-                    console.error('[WS] Connection exception:', e);
+                    console.error('[WS] Connection exception.');
                     if (!replayMode) {
                         wsReconnectTimeout = setTimeout(connect, 5000);
                     }

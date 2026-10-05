@@ -342,30 +342,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 activeZoneCount++;
                 const isSevere = props.severity === 'severe';
                 const isHeavy = props.severity === 'heavy';
-                const color = isSevere ? '#f43f5e' : (isHeavy ? '#f59e0b' : '#10b981');
+                const isHighRisk = isSevere || isHeavy;
+                const color = isSevere ? '#ef4444' : (isHeavy ? '#f59e0b' : '#10b981');
                 
                 const zonePoly = L.geoJSON(feat, {
                     style: {
                         color: color,
-                        weight: isSevere ? 3 : 2,
-                        dashArray: '5, 5',
+                        weight: isSevere ? 3 : (isHeavy ? 2.5 : 2),
+                        dashArray: isSevere ? '6, 3' : '4, 4',
                         fillColor: color,
-                        fillOpacity: isSevere ? 0.32 : 0.22
+                        fillOpacity: isSevere ? 0.35 : (isHeavy ? 0.26 : 0.18)
                     }
                 });
 
                 const c = props.centroid || [feat.geometry.coordinates[0][0][0], feat.geometry.coordinates[0][0][1]];
                 
-                // Add high-visibility permanent map label
+                // Compact map marker pill (78px, 3-way triangular stagger to prevent overlap)
+                const staggerIdx = activeZoneCount % 3;
+                let xAnchor = 39;
+                let yAnchor = 11;
+                if (staggerIdx === 1) {
+                    xAnchor = 55;
+                    yAnchor = 24;
+                } else if (staggerIdx === 2) {
+                    xAnchor = 20;
+                    yAnchor = 24;
+                }
+
+                const markerBg = isSevere ? '#dc2626' : (isHeavy ? '#ea580c' : '#059669');
+
                 const labelIcon = L.divIcon({
-                    className: 'zone-map-label',
+                    className: 'compact-marker-container',
                     html: `
-                        <div style="background:${color}; color:#fff; font-size:10px; font-weight:800; padding:3px 7px; border-radius:5px; box-shadow:0 3px 8px rgba(0,0,0,0.6); white-space:nowrap; display:flex; align-items:center; gap:4px; cursor:pointer;">
-                            <span>⚠️</span> <span>${props.zone_id}: ETA ${props.eta_minutes}m</span>
+                        <div class="compact-map-marker ${isHighRisk ? 'severe-pulse' : ''}" style="background:${markerBg};" title="${props.zone_id}: ${props.name}">
+                            <span class="marker-icon">${isHighRisk ? '🚨' : '⚠️'}</span>
+                            <span class="marker-id">${props.zone_id}</span>
+                            <span class="marker-sep">•</span>
+                            <span class="marker-eta">${props.eta_minutes || 25}m</span>
                         </div>
                     `,
-                    iconSize: [95, 22],
-                    iconAnchor: [47, 11]
+                    iconSize: [78, 22],
+                    iconAnchor: [xAnchor, yAnchor]
                 });
                 
                 // Note: c is [lon, lat] from backend, Leaflet marker takes [lat, lon]
@@ -423,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
         state.timeStep = step;
         
         // Update Scrubber Track UI
-        const stepElements = document.querySelectorAll('.time-step');
+        const stepElements = document.querySelectorAll('.time-capsule, .time-step');
         stepElements.forEach(el => {
             const s = parseInt(el.getAttribute('data-step'), 10);
             if (s === step) {
@@ -541,7 +558,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const isDemo = (props.source === 'demo_fallback') || ApiService.isReplayMode() || ApiService.isFallbackActive();
             const demoBadgeHtml = isDemo ? `<span class="demo-badge">DEMO</span>` : '';
 
-            const severityLabel = props.severity === 'severe' ? 'HIGH RISK' : (props.severity === 'heavy' ? 'HIGH RISK' : 'MODERATE');
+            const isSevere = props.severity === 'severe';
+            const isHeavy = props.severity === 'heavy';
+            const severityLabel = isSevere ? '🔴 HIGH RISK' : (isHeavy ? '⚠️ HIGH RISK' : 'MODERATE');
 
             card.innerHTML = `
                 <div class="card-top">
@@ -822,7 +841,7 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.playBtn.addEventListener('click', togglePlay);
 
         // Timeline Step Capsules
-        const stepElements = document.querySelectorAll('.time-step');
+        const stepElements = document.querySelectorAll('.time-capsule, .time-step');
         stepElements.forEach(el => {
             el.addEventListener('click', () => {
                 const s = parseInt(el.getAttribute('data-step'), 10);

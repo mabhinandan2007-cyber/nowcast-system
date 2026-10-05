@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (props.centroid) {
                     // Escape sequence for emoji warning
-                    const iconHtml = <div class="zone-label-badge" style="background-color: ; opacity: 0.9;"><span class="icon">⚠️</span> </div>;
+                                        const iconHtml = `<div class="zone-label-badge" style="background-color: ${color}; opacity: 0.9;"><span class="icon">✨️</span> ${props.zone_id}</div>`;
                     const labelIcon = L.divIcon({ html: iconHtml, className: '', iconSize: [0, 0] });
                     const marker = L.marker([props.centroid[1], props.centroid[0]], { icon: labelIcon });
                     state.layers.zones.addLayer(marker);

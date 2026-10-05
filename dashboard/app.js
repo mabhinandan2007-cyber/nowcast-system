@@ -408,6 +408,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Forecast Frame (T+30m to T+360m)
     function renderForecastFrame(frameIndex) {
         state.layers.radar.clearLayers();
+        state.layers.ci.clearLayers();
+        state.layers.lightning.clearLayers();
+        state.layers.zones.clearLayers();
         
         if (!state.forecastFrames || state.forecastFrames.length < frameIndex) {
             return;
@@ -416,24 +419,135 @@ document.addEventListener('DOMContentLoaded', () => {
         const frame = state.forecastFrames[frameIndex - 1];
         if (!frame || !frame.geojson) return;
 
-        if (state.visibility.radar) {
-            const features = frame.geojson.features || [];
-            features.forEach(feat => {
-                const props = feat.properties || {};
+        const features = frame.geojson.features || [];
+        
+        features.forEach(feat => {
+            const props = feat.properties || {};
+            const type = props.hazard_type;
+
+            // 1. Radar Reflectivity Polygons
+            if (type === 'radar_reflectivity' && state.visibility.radar) {
                 const color = getDbzColor(props.dbz_threshold, props.severity);
                 const poly = L.geoJSON(feat, {
                     style: {
                         color: color,
                         weight: 1.5,
                         fillColor: color,
-                        fillOpacity: props.severity === 'severe' ? 0.6 : (props.severity === 'heavy' ? 0.4 : 0.25)
+                        fillOpacity: props.severity === 'severe' ? 0.65 : (props.severity === 'heavy' ? 0.45 : 0.28)
                     }
                 });
-                poly.bindTooltip(`<b>Forecast T+${frame.lead_time_minutes}m (${frame.lead_time_minutes / 60}h)</b><br>${props.title || 'Projected Reflectivity'} (${props.dbz_threshold || 30} dBZ)`, { sticky: true });
+                poly.bindTooltip(`<b>${props.title || 'Radar Reflectivity'}</b><br>Intensity: ${props.dbz_threshold} dBZ`, { sticky: true });
                 state.layers.radar.addLayer(poly);
-            });
-        }
+            }
+
+            // 2. Convective Initiation Points
+            else if (type === 'convective_initiation' && state.visibility.ci) {
+                const coords = feat.geometry?.coordinates;
+                if (coords) {
+                    const conf = props.confidence || 0.5;
+                    const circle = L.circleMarker([coords[1], coords[0]], {
+                        radius: conf > 0.8 ? 6 : 4.5,
+                        fillColor: '#38bdf8',
+                        color: '#ffffff',
+                        weight: 1.5,
+                        opacity: 0.95,
+                        fillOpacity: 0.85
+                    });
+                    circle.bindTooltip(`
+                        <div style="font-size:11px;">
+                            <b style="color:#38bdf8;">Convective Initiation Detection</b><br>
+                            <b>Confidence:</b> ${(conf * 100).toFixed(0)}%<br>
+                            <b>Cooling Rate:</b> ${props.cooling_rate || 'N/A'} K/hr
+                        </div>
+                    `, { sticky: true });
+                    state.layers.ci.addLayer(circle);
+                }
+            }
+
+            // 3. Lightning Strikes
+            else if (type === 'lightning' && state.visibility.lightning) {
+                const coords = feat.geometry?.coordinates;
+                if (coords) {
+                    const strike = L.circleMarker([coords[1], coords[0]], {
+                        radius: 5,
+                        fillColor: '#fbbf24',
+                        color: '#fef08a',
+                        weight: 1.5,
+                        opacity: 1,
+                        fillOpacity: 0.85
+                    });
+                    strike.bindTooltip(`
+                        <div style="font-size:11px;">
+                            <b style="color:#fbbf24;">⚡ Lightning Strike Event</b><br>
+                            <b>Peak Current:</b> ${props.intensity_ka || '--'} kA<br>
+                            <b>Time:</b> ${props.timestamp ? new Date(props.timestamp).toLocaleTimeString() : 'Recent'}
+                        </div>
+                    `, { sticky: true });
+                    state.layers.lightning.addLayer(strike);
+                }
+            }
+
+            // 4. Synthesized Hazard Warning Zones
+            else if (type === 'hazard_zone' && state.visibility.zones) {
+                activeZoneCount++;
+                const isSevere = props.severity === 'severe';
+                const isHeavy = props.severity === 'heavy';
+                const isHighRisk = isSevere || isHeavy;
+                const color = isSevere ? '#ef4444' : (isHeavy ? '#f59e0b' : '#10b981');
+                
+                const zonePoly = L.geoJSON(feat, {
+                    style: {
+                        color: color,
+                        weight: isSevere ? 3 : (isHeavy ? 2.5 : 2),
+                        dashArray: isSevere ? '6, 3' : '4, 4',
+                        fillColor: color,
+                        fillOpacity: isSevere ? 0.35 : (isHeavy ? 0.26 : 0.18)
+                    }
+                });
+
+                const c = props.centroid || [feat.geometry.coordinates[0][0][0], feat.geometry.coordinates[0][0][1]];
+                
+                // Compact map marker pill (78px, 3-way triangular stagger to prevent overlap)
+                const staggerIdx = activeZoneCount % 3;
+                let xAnchor = 39;
+                let yAnchor = 11;
+                if (staggerIdx === 1) {
+                    xAnchor = 55;
+                    yAnchor = 24;
+                } else if (staggerIdx === 2) {
+                    xAnchor = 20;
+                    yAnchor = 24;
+                }
+
+                const markerBg = isSevere ? '#dc2626' : (isHeavy ? '#ea580c' : '#059669');
+
+                const labelIcon = L.divIcon({
+                    className: 'compact-marker-container',
+                    html: `
+                        <div class="compact-map-marker ${isHighRisk ? 'severe-pulse' : ''}" style="background:${markerBg};" title="${props.zone_id}: ${props.name}">
+                            <span class="marker-icon">${isHighRisk ? '🚨' : '⚠️'}</span>
+                            <span class="marker-id">${props.zone_id}</span>
+                            <span class="marker-sep">•</span>
+                            <span class="marker-eta">${props.eta_minutes || 25}m</span>
+                        </div>
+                    `,
+                    iconSize: [78, 22],
+                    iconAnchor: [xAnchor, yAnchor]
+                });
+                
+                // Note: c is [lon, lat] from backend, Leaflet marker takes [lat, lon]
+                const marker = L.marker([c[1], c[0]], { icon: labelIcon });
+                
+                // Click handlers on polygon and marker open detail modal
+                zonePoly.on('click', () => openHazardDetail(feat));
+                marker.on('click', () => openHazardDetail(feat));
+
+                state.layers.zones.addLayer(zonePoly);
+                state.layers.zones.addLayer(marker);
+            }
+        });
     }
+
 
     // Timeline Scrubber Controller
     function setTimeStep(step) {

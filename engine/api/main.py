@@ -120,6 +120,7 @@ app.add_middleware(
 
 
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
 
 DASHBOARD_DIR = os.path.abspath(os.path.join(CURRENT_DIR, '..', '..', 'dashboard'))
 if os.path.exists(DASHBOARD_DIR):
@@ -129,19 +130,7 @@ if os.path.exists(DASHBOARD_DIR):
 @app.get("/")
 def get_root():
     """Service index and endpoint directory."""
-    return {
-        "service": "Nowcast System Backend API",
-        "version": "1.0.0",
-        "documentation": "/docs",
-        "dashboard": "/dashboard/",
-        "endpoints": {
-            "dashboard": "/dashboard/",
-            "status": "/status",
-            "hazards": "/hazards",
-            "forecast": "/forecast?model=optical_flow",
-            "websocket_live": "ws://<host>:<port>/live",
-            "replay": "/replay"
-        }
+    return RedirectResponse(url="/dashboard/index.html")
     }
 
 

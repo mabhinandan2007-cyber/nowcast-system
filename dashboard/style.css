@@ -108,11 +108,11 @@ body, html {
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    background-color: #06080d;
+    background-color: var(--navy-dark);
 }
 
 .leaflet-container {
-    background: #06080d !important;
+    background: var(--navy-dark) !important;
     font-family: var(--font-sans) !important;
 }
 

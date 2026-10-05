@@ -686,8 +686,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (elements.statusDot) {
-            elements.statusDot.style.backgroundColor = (isReplay || isFallback) ? 'var(--accent-amber)' : 'var(--accent-emerald)';
-            elements.statusDot.style.boxShadow = (isReplay || isFallback) ? '0 0 10px var(--accent-amber)' : '0 0 10px var(--accent-emerald)';
+            elements.statusDot.style.backgroundColor = (isReplay || isFallback) ? '#f59e0b' : '#14b8a6';
+            elements.statusDot.style.boxShadow = (isReplay || isFallback) ? '0 0 10px #f59e0b' : '0 0 10px #14b8a6';
         }
 
         if (elements.sourceGrid) {
@@ -792,16 +792,16 @@ document.addEventListener('DOMContentLoaded', () => {
         state.isPlaying = !state.isPlaying;
         if (state.isPlaying) {
             elements.playBtn.innerHTML = '<span class="play-icon">⏸️</span> <span class="play-text">Pause</span>';
-            elements.playBtn.style.background = 'var(--accent-rose)';
-            elements.playBtn.style.borderColor = 'var(--accent-rose)';
+            elements.playBtn.style.background = '#ef4444';
+            elements.playBtn.style.borderColor = '#ef4444';
             state.playInterval = setInterval(() => {
                 const nextStep = (state.timeStep + 1) % 13;
                 setTimeStep(nextStep);
             }, 1700);
         } else {
             elements.playBtn.innerHTML = '<span class="play-icon">▶️</span> <span class="play-text">Play Nowcast</span>';
-            elements.playBtn.style.background = 'var(--accent-indigo)';
-            elements.playBtn.style.borderColor = 'var(--accent-indigo)';
+            elements.playBtn.style.background = '#2563eb';
+            elements.playBtn.style.borderColor = '#2563eb';
             clearInterval(state.playInterval);
         }
     }
